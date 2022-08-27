@@ -1,3 +1,4 @@
+<!-- Se agregó bootstrap para los estilos del footer y el header -->
 <!DOCTYPE html>
 <html lang="es">
 

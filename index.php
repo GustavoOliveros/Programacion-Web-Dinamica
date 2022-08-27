@@ -12,6 +12,7 @@
 <body class="d-flex flex-column min-vh-100 justify-content-center">
     <div class="container" style="max-width: 992px;">
         <h1 class="text-center">Programación Web Dinámica - Grupo 6</h1>
+        <p class="text-center">Gustavo Oliveros - Gonzalo Olmos - Jose Centeno</p>
         <div class="accordion accordion-flush" id="tps">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="tp1">
@@ -59,14 +60,14 @@
                             </div>
                             <div class="accordion-item p-3">Ejercicio 2
                                 <div class="accordion-body">
-                                    <a href="TP2/ej2/ej1/ej1.html" class="btn btn-primary">#1</a>
-                                    <a href="TP2/ej2/ej2/ej2.html" class="btn btn-primary">#2</a>
-                                    <a href="TP2/ej2/ej3/ej3.html" class="btn btn-primary">#3</a>
-                                    <a href="TP2/ej2/ej4/ej4.html" class="btn btn-primary">#4</a>
-                                    <a href="TP2/ej2/ej5/ej5.html" class="btn btn-primary">#5</a>
-                                    <a href="TP2/ej2/ej6/ej6.html" class="btn btn-primary">#6</a>
-                                    <a href="TP2/ej2/ej7/ej7.html" class="btn btn-primary">#7</a>
-                                    <a href="TP2/ej2/ej8/ej8.html" class="btn btn-primary">#8</a>
+                                    <a href="TP2/tp1-ej1/Vista/index.php" class="btn btn-primary">#1</a>
+                                    <a href="TP2/tp1-ej2/Vista/index.php" class="btn btn-primary">#2</a>
+                                    <a href="TP2/tp1-ej3/Vista/index.php" class="btn btn-primary">#3</a>
+                                    <a href="TP2/tp1-ej4/Vista/index.php" class="btn btn-primary">#4</a>
+                                    <a href="TP2/tp1-ej5/Vista/index.php" class="btn btn-primary">#5</a>
+                                    <a href="TP2/tp1-ej6/Vista/index.php" class="btn btn-primary">#6</a>
+                                    <a href="TP2/tp1-ej7/Vista/index.php" class="btn btn-primary">#7</a>
+                                    <a href="TP2/tp1-ej8/Vista/index.php" class="btn btn-primary">#8</a>
                                 </div>
                             </div>
                             <div class="accordion-item p-3"><a href="TP2/ej3/Vista/index.php">Ejercicio 3</a>
