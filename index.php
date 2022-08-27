@@ -12,7 +12,7 @@
 <body class="d-flex flex-column min-vh-100 justify-content-center">
     <div class="container" style="max-width: 992px;">
         <h1 class="text-center">Programación Web Dinámica - Grupo 6</h1>
-        <p class="text-center">Gustavo Oliveros - Gonzalo Olmos - Jose Centeno</p>
+        <p class="text-center">Gustavo Oliveros - Gonzalo Olmos - Jose Centena</p>
         <div class="accordion accordion-flush" id="tps">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="tp1">
