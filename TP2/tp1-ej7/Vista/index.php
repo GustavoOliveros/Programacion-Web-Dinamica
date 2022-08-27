@@ -15,7 +15,7 @@
 	?>
 	<div class="col-12 col-md-9 mx-auto bg-light rounded-3 p-4 shadow" style="max-width: 768px;">
 		<h1 class="text-center mb-4">Calculadora</h1>
-		<form action="operacion.php" method="get" name="form" id="form" class="needs-validation col-12 mx-auto" novalidate>
+		<form action="../Control/operacion.php" method="get" name="form" id="form" class="needs-validation col-12 mx-auto" novalidate>
 			<div class="row mb-2">
 				<div class="col-12 col-md-6 mx-auto">
 					<input type="number" class="form-control" name="form-numero-uno" id="form-numero-uno" required />

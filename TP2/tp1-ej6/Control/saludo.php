@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../bootstrap-5.2.0-dist/css/bootstrap.min.css">
-    <title>Ejercicio 5 - Tp 1 con Bootstrap</title>
+    <title>Ejercicio 6 - Tp 1 con Bootstrap</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -38,14 +38,20 @@
                     $stringSexo = "me identifico con el sexo <strong>" . $_POST["sexo"] . "</strong>";
                 }
 
-                echo "Hola, soy <strong>" . $_POST["nombre-form"] . " " . $_POST["apellido-form"] . "</strong>, tengo <strong>" . $_POST["edad-form"] . "</strong> años, " . $edadString . ", y vivo en <strong>" . $_POST["direccion-form"] . "</strong>. " . $estudiosString . " y " . $stringSexo . ".";
+                if (!empty($_POST["deportes"])) {
+                    $stringDeportes = "Practico <strong>" . count($_POST["deportes"]) . "</strong> deportes.";
+                } else {
+                    $stringDeportes = "No practico <strong>ningún</strong> deporte.";
+                }
+
+                echo "Hola, soy <strong>" . $_POST["nombre-form"] . " " . $_POST["apellido-form"] . "</strong>, tengo <strong>" . $_POST["edad-form"] . "</strong> años, " . $edadString . ", y vivo en <strong>" . $_POST["direccion-form"] . "</strong>. " . $estudiosString . " y " . $stringSexo . ". " . $stringDeportes;
             } else {
                 echo "No se recibieron datos";
             }
 
             ?>
         </h2>
-        <a href="index.php">Volver</a>
+        <a href="../Vista/index.php">Volver</a>
     </div>
     <?php
     include_once "../../../Estructura/footer.php";

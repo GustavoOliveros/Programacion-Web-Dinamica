@@ -17,7 +17,7 @@
 		<div class="col-12 col-md-6 col-xxl-4 bg-light rounded-4 shadow">
 			<h1 class="text-center p-4">VER NÚMERO</h1>
 			<div class="container-sm">
-				<form class="needs-validation d-flex align-items-center justify-content-center flex-column" action="vernumero.php" method="get" novalidate>
+				<form class="needs-validation d-flex align-items-center justify-content-center flex-column" action="../Control/vernumero.php" method="get" novalidate>
 					<div class="col-11 mt-4 position-relative">
 						<label for="num" class="form-label">Ingrese un número</label>
 						<input type="number" class="form-control" id="num" name="num" required />

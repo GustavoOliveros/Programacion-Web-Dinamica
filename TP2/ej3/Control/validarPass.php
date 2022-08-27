@@ -45,20 +45,20 @@
             $nomUsuario = $_POST["username"];
             echo '<div class="container d-flex flex-column align-items-center justify-content-center vh-100">
             <h1 class="text-center"><strong>¡Bienvenido de vuelta, ' . strtoupper($nomUsuario) . '!</strong></h1>
-            <a href="index.php">Cerrar sesión</a>
+            <a href="../Vista/index.php">Cerrar sesión</a>
             </div>';
         } else {
             // Alerta de error y link al formulario anterior
             echo '<div class="col-12 col-md-9 mx-auto alert alert-danger m-3" role="alert">
             No encontramos su usuario o contraseña en nuestro sistema.<br>
-            <a href="index.php">Haga click acá para volver</a>
+            <a href="../Vista/index.php">Haga click acá para volver</a>
             </div>';
         }
     } else {
         // Alerta de que ocurrió un fallo
         echo '<div class="col-12 col-md-9 mx-auto alert alert-danger m-3" role="alert">
         Ocurrió un fallo.<br>
-        <a href="index.php">Haga click acá para volver</a>
+        <a href="../Vista/index.php">Haga click acá para volver</a>
         </div>';
     }
     ?>

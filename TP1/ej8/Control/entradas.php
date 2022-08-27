@@ -6,23 +6,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8 - TP 1</title>
     <link rel="stylesheet" href="../../../bootstrap-5.2.0-dist/css/bootstrap.min.css">
-    <title>Ejercicio 2 - Tp 1</title>
     <style>
         .contenedor {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
-
-        input {
-            display: block;
-            margin: 0 auto;
-        }
-
-        input[type="submit"] {
-            margin: 10px auto;
         }
     </style>
 </head>
@@ -32,15 +23,30 @@
     include_once "../../../Estructura/navbar.php";
     ?>
     <div class="contenedor">
-        <h1>Horas de cursada: PWD</h1>
-        <form action="../Control/horascursada.php" method="get" name="form">
-            Lunes <input type="number" name="horas-lunes" value="0" min="0" step="0.5">
-            Martes <input type="number" name="horas-martes" value="0" min="0" step="0.5">
-            Miercoles <input type="number" name="horas-miercoles" value="0" min="0" step="0.5">
-            Jueves <input type="number" name="horas-jueves" value="0" min="0" step="0.5">
-            Viernes <input type="number" name="horas-viernes" value="0" min="0" step="0.5">
-            <input type="submit">
-        </form>
+        <br><br>
+        <h1>Cine Cinem@s</h1>
+        <p>
+            <?php
+            if ($_POST) {
+                $edad = $_POST["edad"];
+                $estudiante = $_POST["esEstudiante"];
+
+                if ($edad < 12) {
+                    $precio = 160;
+                } else if ($estudiante == "true") {
+                    $precio = 180;
+                } else {
+                    $precio = 300;
+                }
+
+                echo "<h2>Total a pagar: $" . $precio . "</h2>";
+            } else {
+                echo "<h2>No se recibieron datos</h2>";
+            }
+            ?>
+        </p>
+        <br>
+        <a href="../Vista/index.php">Volver</a>
     </div>
     <?php
     include_once "../../../Estructura/footer.php";

@@ -40,7 +40,7 @@
     include_once "../../../Estructura/navbar.php";
     ?>
     <div class="contenedor">
-        <form action="saludo.php" method="get" name="form"">
+        <form action="../Control/saludo.php" method="get" name="form"">
             Nombre: <input type="text" name="nombre-form" required>
             Apellido: <input type="text" name="apellido-form" required>
             Edad: <input type="number" min="0" max="150" name="edad-form" required>

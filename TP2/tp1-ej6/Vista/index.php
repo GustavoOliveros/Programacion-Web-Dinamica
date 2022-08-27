@@ -14,7 +14,7 @@
 	include_once "../../../Estructura/navbar.php";
 	?>
 	<div class="col-12 col-md-9 mx-auto bg-light rounded-3 p-4 shadow" style="max-width: 992px">
-		<form action="saludo.php" method="post" name="form" class="needs-validation col-12 mx-auto" novalidate>
+		<form action="../Control/saludo.php" method="post" name="form" class="needs-validation col-12 mx-auto" novalidate>
 			<h1 class="text-center mb-4"><strong>Datos</strong></h1>
 			<div class="row">
 				<hr />

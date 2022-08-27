@@ -24,7 +24,7 @@
     ?>
     <div class="contenedor">
         <h1>Ver número</h1>
-        <form action="vernumero.php" method="get" name="form">
+        <form action="../Control/vernumero.php" method="get" name="form">
             <input type="number" name="numero_form" id="num">
             <input type="submit">
         </form>

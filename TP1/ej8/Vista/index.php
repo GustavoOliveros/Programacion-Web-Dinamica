@@ -25,7 +25,7 @@
     <div class="contenedor">
         <h1>Cine Cinem@s</h1>
         <h2>Calcule el precio de su entrada</h2>
-        <form action="entradas.php" method="post">
+        <form action="../Control/entradas.php" method="post">
             <p>Ingrese su edad</p>
             <input type="number" min="0" max="150" name="edad" required>
             <p>¿Es Estudiante?</p>

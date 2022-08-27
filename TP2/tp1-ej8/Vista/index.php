@@ -16,7 +16,7 @@
 	<div class="container-sm p-4 mt-3 bg-light rounded-3 shadow" style="max-width: 576px;">
 		<h1 class="fw-bold text-center mb-5">Cine Cinem@s</h1>
 		<h4>Calcule su entrada</h4>
-		<form action="entradas.php" method="post" class="needs-validation" name="form" id="form" novalidate>
+		<form action="../Control/entradas.php" method="post" class="needs-validation" name="form" id="form" novalidate>
 			<div class="row mb-3">
 				<div class="col-12 col-md-6">
 					<label for="edad" class="form-label">Su edad</label>

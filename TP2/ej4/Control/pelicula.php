@@ -34,7 +34,7 @@
         }
 
         ?>
-        <a href="index.php">Volver</a>
+        <a href="../Vista/index.php">Volver</a>
 
 
     </div>

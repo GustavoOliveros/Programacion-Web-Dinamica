@@ -15,7 +15,7 @@
 	?>
 	<div class="d-flex justify-content-center align-items-center vh-100">
 		<div class="col-12 col-md-7 col-lg-5 col- bg-light shadow rounded p-3 border border-primary">
-			<form action="subirArchivo.php" method="post" class="needs-validation" enctype="multipart/form-data" name="form" id="form" novalidate>
+			<form action="../Control/subirArchivo.php" method="post" class="needs-validation" enctype="multipart/form-data" name="form" id="form" novalidate>
 				<div class="row">
 					<h1 class="text-center my-4"><strong>Archivos</strong></h1>
 					<div class="col-12 mb-4">

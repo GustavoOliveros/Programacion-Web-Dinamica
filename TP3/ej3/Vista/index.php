@@ -25,7 +25,7 @@
 				</p>
 			</div>
 			<div class="col-12 rounded-bottom shadow p-5">
-				<form action="pelicula.php" method="post" id="form" name="form" class="needs-validation" enctype="multipart/form-data" novalidate>
+				<form action="../Control/pelicula.php" method="post" id="form" name="form" class="needs-validation" enctype="multipart/form-data" novalidate>
 					<div class="row">
 						<div class="col-12 mb-5 position-relative">
 							<label for="poster" class="form-label">Póster</label>

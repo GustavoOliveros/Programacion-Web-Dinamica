@@ -48,7 +48,7 @@
         echo "<div class='alert alert-success col-12 col-md-8 col-xxl-4 p-4 mt-3 mx-auto'>
         <h1>" . $numA . $operador . $numB . " = " . $resultado . "</h1>";
     }
-    echo "<a href='index.php'>Volver</a></div>";
+    echo "<a href='../Vista/index.php'>Volver</a></div>";
     ?>
     <?php
     include_once "../../../Estructura/footer.php";

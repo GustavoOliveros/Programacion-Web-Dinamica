@@ -34,33 +34,12 @@
             }
             ?>
         </h1>
-        <a href="index.php">Hacer otra consulta</a>
+        <a href="../Vista/index.php">Hacer otra consulta</a>
     </div>
     <?php
     include_once "../../../Estructura/footer.php";
     ?>
     <script src="../../../bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
-</body>
-
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EJ 8</title>
-    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css" />
-    <script src="bootstrap-5.2.0-dist/js/bootstrap.min.js" defer></script>
-</head>
-
-<body>
-
 </body>
 
 </html>

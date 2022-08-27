@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 8 - TP 1</title>
+    <title>Ejercicio 3 - TP 1</title>
     <link rel="stylesheet" href="../../../bootstrap-5.2.0-dist/css/bootstrap.min.css">
     <style>
         .contenedor {
@@ -14,6 +14,17 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+        }
+
+        input {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            margin-top: 5px;
+            width: 100px;
         }
     </style>
 </head>
@@ -24,29 +35,17 @@
     ?>
     <div class="contenedor">
         <br><br>
-        <h1>Cine Cinem@s</h1>
         <p>
             <?php
             if ($_POST) {
-                $edad = $_POST["edad"];
-                $estudiante = $_POST["esEstudiante"];
-
-                if ($edad < 12) {
-                    $precio = 160;
-                } else if ($estudiante == "true") {
-                    $precio = 180;
-                } else {
-                    $precio = 300;
-                }
-
-                echo "<h2>Total a pagar: $" . $precio . "</h2>";
+                echo "Hola, yo soy <strong>" . $_POST["nombre-form"] . ", " . $_POST["apellido-form"] . "</strong> tengo <strong>" . $_POST["edad-form"] . "</strong> años y vivo en <strong>" . $_POST["direccion-form"] . "</strong>";
             } else {
-                echo "<h2>No se recibieron datos</h2>";
+                echo "No se recibieron datos";
             }
             ?>
         </p>
         <br>
-        <a href="index.php">Volver</a>
+        <a href="../Vista/index.php">Volver</a>
     </div>
     <?php
     include_once "../../../Estructura/footer.php";

@@ -21,7 +21,7 @@
 					<h1 class="fw-5 text-center mb-5 mt-5">Member Login</h1>
 				</div>
 			</div>
-			<form action="validarPass.php" method="post" class="needs-validation" name="form" id="form" novalidate>
+			<form action="../Control/validarPass.php" method="post" class="needs-validation" name="form" id="form" novalidate>
 				<div class="row">
 					<div class="col-12 col-md-9 mx-auto">
 						<div class="input-group mb-3">

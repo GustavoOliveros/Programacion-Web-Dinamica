@@ -32,7 +32,7 @@
             }
             ?>
         </h1>
-        <a href="index.php">Volver</a>
+        <a href="../Vista/index.php">Volver</a>
     </div>
     <?php
     include_once "../../../Estructura/footer.php";

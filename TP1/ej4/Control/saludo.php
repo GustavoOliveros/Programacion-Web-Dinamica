@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3 - TP 1</title>
+    <title>Ejercicio 4 - TP 1</title>
     <link rel="stylesheet" href="../../../bootstrap-5.2.0-dist/css/bootstrap.min.css">
     <style>
         .contenedor {
@@ -37,15 +37,25 @@
         <br><br>
         <p>
             <?php
-            if ($_POST) {
-                echo "Hola, yo soy <strong>" . $_POST["nombre-form"] . ", " . $_POST["apellido-form"] . "</strong> tengo <strong>" . $_POST["edad-form"] . "</strong> años y vivo en <strong>" . $_POST["direccion-form"] . "</strong>";
+            if ($_GET) {
+                if ($_GET["edad-form"] >= 18) {
+                    $edadString =  "mayor de edad.";
+                } else {
+                    $edadString = "menor de edad.";
+                }
+
+                echo "Hola, yo soy <strong>" . $_GET["nombre-form"] . ",
+            " . $_GET["apellido-form"] . "</strong> soy <strong>" . $edadString . "</strong> tengo <strong>" .
+                    $_GET["edad-form"] . "</strong> años y vivo en <strong>" .
+                    $_GET["direccion-form"] . ".</strong><br>";
             } else {
                 echo "No se recibieron datos";
             }
+
             ?>
         </p>
         <br>
-        <a href="index.php">Volver</a>
+        <a href="../Vista/index.php">Volver</a>
     </div>
     <?php
     include_once "../../../Estructura/footer.php";

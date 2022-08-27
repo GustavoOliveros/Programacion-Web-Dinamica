@@ -17,7 +17,7 @@
 		<h1 class="text-center mb-3">
 			<strong>Horas de cursada: PWD</strong>
 		</h1>
-		<form class="needs-validation mx-auto" action="horascursada.php" method="get" name="form" novalidate>
+		<form class="needs-validation mx-auto" action="../Control/horascursada.php" method="get" name="form" novalidate>
 			<div class="row">
 				<div class="col-12 col-md-4 mb-5 position-relative">
 					<label for="horas-lunes" class="form-label">Lunes</label>

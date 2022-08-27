@@ -23,7 +23,7 @@
     include_once "../../../Estructura/navbar.php";
     ?>
     <div class="contenedor">
-        <form action="operacion.php" method="get" name="form">
+        <form action="../Control/operacion.php" method="get" name="form">
             <input type="number" name="form-numero-uno" required><br>
             <input type="number" name="form-numero-dos" required><br>
             <select name="operador">

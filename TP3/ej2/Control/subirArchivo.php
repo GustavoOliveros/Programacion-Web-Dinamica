@@ -52,7 +52,7 @@
     ?>
     <script src="../../../bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
     <script>
-        document.querySelector(".alert").innerHTML += '<br><br><a href="index.php">Volver</a>';
+        document.querySelector(".alert").innerHTML += '<br><br><a href="../Vista/index.php">Volver</a>';
     </script>
 </body>
 

@@ -25,7 +25,7 @@
 				</p>
 			</div>
 			<div class="col-12 rounded-bottom shadow p-5">
-				<form action="pelicula.php" method="get" id="form" name="form" class="needs-validation" novalidate>
+				<form action="../Control/pelicula.php" method="get" id="form" name="form" class="needs-validation" novalidate>
 					<div class="row">
 						<div class="col-12 col-md-6 mb-5 position-relative">
 							<label for="titulo" class="form-label">Titulo</label>

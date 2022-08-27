@@ -36,7 +36,7 @@
             echo "No se recibieron datos";
         }
         ?>
-        <br><a href="index.php">Volver</a>
+        <br><a href="../Vista/index.php">Volver</a>
     </div>
     <?php
     include_once "../../../Estructura/footer.php";
