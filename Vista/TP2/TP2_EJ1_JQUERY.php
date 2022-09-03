@@ -35,7 +35,7 @@ include_once "../Estructura/navbar.php";
     </form>
 </div>
 <script src="../lib/jquery-3.6.0.slim.min.js"></script>
-<script src="../lib/jquery-validation-1.19.5/dist/jquery.validate.js"></script>
+<script src="../lib/jquery.validate.js"></script>
 <script src="../js/TP2_EJ1_JQUERY.js"></script>
 <?php
 // Footer
