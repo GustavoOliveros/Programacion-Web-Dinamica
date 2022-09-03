@@ -1,0 +1,35 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+}
+
+input[type="submit"] {
+    margin: 10px auto;
+}
+
+input#edad-form{
+    margin: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    display: inline;
+    margin: 0;
+    width: 20px;
+}
+
+input#operador, input.enviar-inline{
+    display: inline !important;
+}
+
+.margin-reducido{
+    margin: 0 auto !important;
+}
