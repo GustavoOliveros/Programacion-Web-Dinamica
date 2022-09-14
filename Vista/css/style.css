@@ -7,12 +7,12 @@
     margin: 20px auto;
 }
 
-input {
+.bloque {
     display: block;
     margin: 0 auto;
 }
 
-input[type="submit"] {
+.margen-10 {
     margin: 10px auto;
 }
 
@@ -20,7 +20,7 @@ input#edad-form{
     margin: 0;
 }
 
-input[type="radio"], input[type="checkbox"] {
+.check-inline {
     display: inline;
     margin: 0;
     width: 20px;

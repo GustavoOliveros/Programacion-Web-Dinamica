@@ -60,19 +60,19 @@
                             </div>
                             <div class="accordion-item p-3">Ejercicio 2
                                 <div class="accordion-body">
-                                    <a href="TP2/tp1-ej1/Vista/index.php" class="btn btn-primary">#1</a>
-                                    <a href="TP2/tp1-ej2/Vista/index.php" class="btn btn-primary">#2</a>
-                                    <a href="TP2/tp1-ej3/Vista/index.php" class="btn btn-primary">#3</a>
-                                    <a href="TP2/tp1-ej4/Vista/index.php" class="btn btn-primary">#4</a>
-                                    <a href="TP2/tp1-ej5/Vista/index.php" class="btn btn-primary">#5</a>
-                                    <a href="TP2/tp1-ej6/Vista/index.php" class="btn btn-primary">#6</a>
-                                    <a href="TP2/tp1-ej7/Vista/index.php" class="btn btn-primary">#7</a>
-                                    <a href="TP2/tp1-ej8/Vista/index.php" class="btn btn-primary">#8</a>
+                                    <a href="TP2/TP1_EJ1.php" class="btn btn-primary">#1</a>
+                                    <a href="TP2/TP1_EJ2.php" class="btn btn-primary">#2</a>
+                                    <a href="TP2/TP1_EJ3.php" class="btn btn-primary">#3</a>
+                                    <a href="TP2/TP1_EJ4.php" class="btn btn-primary">#4</a>
+                                    <a href="TP2/TP1_EJ5.php" class="btn btn-primary">#5</a>
+                                    <a href="TP2/TP1_EJ6.php" class="btn btn-primary">#6</a>
+                                    <a href="TP2/TP1_EJ7.php" class="btn btn-primary">#7</a>
+                                    <a href="TP2/TP1_EJ8.php" class="btn btn-primary">#8</a>
                                 </div>
                             </div>
-                            <div class="accordion-item p-3"><a href="TP2/ej3/Vista/index.php">Ejercicio 3</a>
+                            <div class="accordion-item p-3"><a href="TP2/TP2_EJ3.php">Ejercicio 3</a>
                             </div>
-                            <div class="accordion-item p-3"><a href="TP2/ej4/Vista/index.php">Ejercicio 4</a>
+                            <div class="accordion-item p-3"><a href="TP2/TP2_EJ4.php">Ejercicio 4</a>
                             </div>
                         </div>
                     </div>
@@ -87,11 +87,11 @@
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="accordion accordion-flush">
-                            <div class="accordion-item p-3"><a href="TP3/ej1/Vista/index.php">Ejercicio 1</a>
+                            <div class="accordion-item p-3"><a href="TP3/TP3_EJ1.php">Ejercicio 1</a>
                             </div>
-                            <div class="accordion-item p-3"><a href="TP3/ej2/Vista/index.php">Ejercicio 2</a>
+                            <div class="accordion-item p-3"><a href="TP3/TP3_EJ2.php">Ejercicio 2</a>
                             </div>
-                            <div class="accordion-item p-3"><a href="TP3/ej3/Vista/index.php">Ejercicio 3</a>
+                            <div class="accordion-item p-3"><a href="TP3/TP3_EJ3.php">Ejercicio 3</a>
                             </div>
                         </div>
                     </div>

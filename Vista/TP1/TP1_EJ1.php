@@ -11,8 +11,8 @@ include_once "../Estructura/navbar.php";
 <div class="contenedor">
     <h1>Ver número</h1>
     <form action="TP1_EJ1_Resultado.php" method="get" name="form" id="form">
-        <input type="number" name="numero-form" id="numero-form">
-        <input type="submit">
+        <input type="number" class="bloque" name="numero-form" id="numero-form">
+        <input type="submit" class="margen-10 bloque">
     </form>
 </div>
 

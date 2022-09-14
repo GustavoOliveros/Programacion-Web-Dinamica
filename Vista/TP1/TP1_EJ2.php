@@ -11,12 +11,12 @@ include_once "../Estructura/navbar.php";
 <div class="contenedor">
     <h1>Horas de cursada: PWD</h1>
     <form action="TP1_EJ2_Respuesta.php" method="get" name="form" class="formulario">
-        Lunes <input type="number" name="horas-lunes" id="horas-lunes" value="0" min="0" step="0.5">
-        Martes <input type="number" name="horas-martes" id="horas-martes" value="0" min="0" step="0.5">
-        Miercoles <input type="number" name="horas-miercoles" id="horas-miercoles" value="0" min="0" step="0.5">
-        Jueves <input type="number" name="horas-jueves" id="horas-jueves" value="0" min="0" step="0.5">
-        Viernes <input type="number" name="horas-viernes" id="horas-viernes" value="0" min="0" step="0.5">
-        <input type="submit">
+        Lunes <input type="number" class="bloque" name="horas-lunes" id="horas-lunes" value="0" min="0" step="0.5">
+        Martes <input type="number" class="bloque" name="horas-martes" id="horas-martes" value="0" min="0" step="0.5">
+        Miercoles <input type="number" class="bloque" name="horas-miercoles" id="horas-miercoles" value="0" min="0" step="0.5">
+        Jueves <input type="number" class="bloque" name="horas-jueves" id="horas-jueves" value="0" min="0" step="0.5">
+        Viernes <input type="number" class="bloque" name="horas-viernes" id="horas-viernes" value="0" min="0" step="0.5">
+        <input type="submit" class="bloque">
     </form>
 </div>
 
