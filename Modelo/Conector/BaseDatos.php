@@ -14,9 +14,9 @@ class BaseDatos extends PDO {
     public function __construct(){
         $this->engine = 'mysql';
         $this->host = 'localhost';
-        $this->database = 'infoautos';
-        $this->user = 'root';
-        $this->pass = '';
+        $this->database = 'pwd_goliveros';
+        $this->user = 'pwd_goliveros';
+        $this->pass = 'pwd_goliveros';
         $this->debug = true;
         $this->error ="";
         $this->sql ="";
@@ -174,7 +174,6 @@ class BaseDatos extends PDO {
           $this->setIndice(0);
           $this->setResultado($arregloResult);
        }
-       echo " La cantidad es ".$cant;
        return $cant;
        
    }
@@ -199,9 +198,7 @@ class BaseDatos extends PDO {
                $this->setIndice(-1);
            }
           
-       } 
-      echo " El valor de fila actual es:";
-      print_r($filaActual);
+       }
        return $filaActual;
    }
    
