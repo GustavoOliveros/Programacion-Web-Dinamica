@@ -10,7 +10,7 @@ function data_submitted() {
         if (count($_AAux)){
             foreach ($_AAux as $indice => $valor) {
                 if ($valor=="")
-                    $_AAux[$indice] = 'null' ;
+                    $_AAux[$indice] = null ;
             }
         }
         return $_AAux;
