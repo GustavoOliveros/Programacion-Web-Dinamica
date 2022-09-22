@@ -1,9 +1,6 @@
 <?php
 
 class C_TP4{
-    // La clase espera un arreglo asociativo cuyas claves son iguales a
-    // las variables instancia de la clase Auto y Persona
-
     /**
      * Retorna un arreglo con todos los autos y el nombre y apellido de sus dueños
      * @return array|null null si no hay autos
