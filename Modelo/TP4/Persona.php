@@ -171,7 +171,6 @@ class Persona{
         $consulta = "INSERT INTO persona(NroDni, Apellido, Nombre, fechaNac, Telefono, Domicilio)
         VALUES ('". $this->getNumDNI()."','".$this->getApellido()."','".$this->getNombre()."',
         '". $this->getFechaNac() ."', '". $this->getTelefono() . "','". $this->getDomicilio() . "');";
-        echo $consulta; 
 
         if($base->Iniciar()){
             if($base->Ejecutar($consulta)){

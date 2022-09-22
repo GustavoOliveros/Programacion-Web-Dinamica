@@ -1,150 +1,76 @@
 <?php
-class C_TP3_EJ3{
-    private $poster;
-    private $titulo;
-    private $actores;
-    private $director;
-    private $guion;
-    private $produccion;
-    private $anio;
-    private $nacionalidad;
-    private $genero;
-    private $duracion;
-    private $edad_recomendada;
-    private $sinopsis;
 
+use JetBrains\PhpStorm\ArrayShape;
+
+class C_TP3_EJ3
+{
     /**
-     * Método constructor de la clase
+     * Visualiza el resultado
      */
-    public function __construct()
+    public function visualizarResultado($arregloEntrada)
     {
-        $this->poster = null;
-        $this->titulo = null;
-        $this->actores = null;
-        $this->director = null;
-        $this->guion = null;
-        $this->produccion = null;
-        $this->anio = null;
-        $this->nacionalidad = null;
-        $this->genero = null;
-        $this->duracion = null;
-        $this->edad_recomendada = null;
-        $this->sinopsis = null;
-    }
+        $resultado["result"] = null;
+        $resultado["error"] = null;
+        $contador = 0;
+        $indices = array("titulo", "actores", "director", "guion",
+        "produccion", "anio", "nacionalidad", "genero", "duracion", "edad-recomendada");
 
-    // Métodos get y set
-    
-    public function getPoster(){
-        return $this->poster;
-    }
-    public function setPoster($poster){
-        $this->poster = $poster;
-    }
-    public function getTitulo(){
-        return $this->titulo;
-    }
-    public function setTitulo($titulo){
-        $this->titulo = $titulo;
-    }
-    public function getActores(){
-        return $this->actores;
-    }
-    public function setActores($actores){
-        $this->actores = $actores;
-    }
-    public function getDirector(){
-        return $this->director;
-    }
-    public function setDirector($director){
-        $this->director = $director;
-    }
-    public function getGuion(){
-        return $this->guion;
-    }
-    public function setGuion($guion){
-        $this->guion = $guion;
-    }
-    public function getProduccion(){
-        return $this->produccion;
-    }
-    public function setProduccion($produccion){
-        $this->produccion = $produccion;
-    }
-    public function getAnio(){
-        return $this->anio;
-    }
-    public function setAnio($anio){
-        $this->anio = $anio;
-    }
-    public function getNacionalidad(){
-        return $this->nacionalidad;
-    }
-    public function setNacionalidad($nacionalidad){
-        $this->nacionalidad = $nacionalidad;
-    }
-    public function getGenero(){
-        return $this->genero;
-    }
-    public function setGenero($genero){
-        $this->genero = $genero;
-    }
-    public function getDuracion(){
-        return $this->duracion;
-    }
-    public function setDuracion($duracion){
-        $this->duracion = $duracion;
-    }
-    public function getEdad_recomendada(){
-        return $this->edad_recomendada;
-    }
-    public function setEdad_recomendada($edad_recomendada){
-        $this->edad_recomendada = $edad_recomendada;
-    }
-    public function getSinopsis(){
-        return $this->sinopsis;
-    }
-    public function setSinopsis($sinopsis){
-        $this->sinopsis = $sinopsis;
-    }
+        $dir = "../Archivos/";
 
-    // Métodos varios
+        if ($_FILES['poster']['error'] <= 0) {
+            if ($_FILES['poster']['type'] == "image/png" || $_FILES['poster']['type'] == "image/jpeg") {
+                if (!copy($_FILES['poster']['tmp_name'], $dir . $_FILES['poster']['name'])) {
+                    // Error al copiar
+                    $resultado["error"] = "1";
+                } else {
+                    $resultado["result"]["poster"] = $dir . $_FILES['poster']['name'];
+                }
+            } else {
+                // Error de tipo de archivo
+                $resultado["error"] = "2";
+            }
+        } else {
+            // Error al subir
+            $resultado["error"] = "3";
+        }
 
-    /**
-     * Carga los datos al objeto
-     * @param array $entrada
-     */
-    public function cargarDatos($entrada){
+        while($contador < count($indices) && is_null($resultado["error"])){
+            $indiceRevisar = $indices[$contador];
+            if(!isset($arreglo[$indiceRevisar])){
+                // Alguno de los campos no llegó
+                $resultado["error"] = "4";
+            }
+            $contador++;
+        }
 
-    }
+        // Validación anio
+        if(is_null($resultado["error"]) && is_numeric($arregloEntrada["anio"])){
+            $anio = intval($arregloEntrada["anio"]);
+            if($anio < 0 || $anio > 9999){
+                // Datos inválidos
+                $resultado["error"] = "5";
+            }
+        }else{
+            $resultado["error"] = "5";
+        }
 
+        // Validación duracion
+        if(is_null($resultado["error"]) && is_numeric($arregloEntrada["duracion"])){
+            $duracion = intval($arregloEntrada["duracion"]);
+            if($duracion < 0 || $duracion > 999){
+                // Datos inválidos
+                $resultado["error"] = "5";
+            }
+        }else{
+            $resultado["error"] = "5";
+        }
 
-    /**
-     * Retorna el resultado del ejercicio
-     * @return array (claves => "result" (array|null) y "error" (int))
-     */
-    public function visualizarResultado(){
+        // Si no se produjeron errores, retorna el arreglo de entrada
+        if(is_null($resultado["error"])){
+            $resultado["result"] = $arregloEntrada;
+        }
 
-    }
-
-    // Método to string
-
-    /**
-     * Convierte al objeto en string
-     * @return string
-     */
-    public function __toString()
-    {
-        return
-        "\nPath del poster: " . $this->getPoster().
-        "\nTitulo: " . $this->getTitulo() .
-        "\nActores: " . $this->getActores() .
-        "\nDirector: " . $this->getDirector() .
-        "\nGuión: " . $this->getGuion() . 
-        "";
+        print_r($resultado);
+        return $resultado;
     }
 }
-
-
-
-
-?>

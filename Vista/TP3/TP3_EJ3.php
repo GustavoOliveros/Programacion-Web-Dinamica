@@ -20,7 +20,7 @@ include_once "../Estructura/navbar.php";
             </p>
         </div>
         <div class="col-12 rounded-bottom shadow p-5">
-            <form action="../../Control/TP3/C_TP3_EJ3.php" method="post" id="form" name="form" class="needs-validation" enctype="multipart/form-data" novalidate>
+            <form action="TP3_EJ3_Resultado.php" method="post" id="form" name="form" class="needs-validation" enctype="multipart/form-data" novalidate>
                 <div class="row">
                     <div class="col-12 mb-5 position-relative">
                         <label for="poster" class="form-label">Póster</label>

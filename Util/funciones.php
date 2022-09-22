@@ -22,12 +22,19 @@ function verEstructura($e){
     echo "</pre>"; 
 }
 
+function mostrarError($contenidoError){
+    return '
+        <div class="col-12 col-md-7 alert alert-danger m-3 p-3 mx-auto">'.
+        $contenidoError .
+        '</div>';
+}
+
 spl_autoload_register(function ($class_name){
     //echo "class ".$class_name ;
     $directorys = array(
-        $_SESSION['ROOT'].'Modelo/',
-        $_SESSION['ROOT'].'Modelo/conector/',
-        $_SESSION['ROOT'].'Control/',
+        $_SESSION['ROOT'].'Modelo/TP4/',
+        $_SESSION['ROOT'].'Modelo/Conector/',
+        $_SESSION['ROOT'].'Control/TP4/',
       //  $GLOBALS['ROOT'].'util/class/',
     );
     //print_object($directorys) ;
