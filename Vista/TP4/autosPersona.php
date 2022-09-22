@@ -1,6 +1,6 @@
 <?php
 // Encabezado
-$titulo = "Buscar Autos - TP 4";
+$titulo = "Persona - TP 4";
 include_once "../Estructura/encabezado.php";
 
 // Navbar
@@ -11,7 +11,7 @@ include_once "../../configuracion.php";
 
 $objControl = new C_TP4();
 $entrada = data_submitted();
-$resultado = $objControl->buscar($entrada);
+$resultado = $objControl->buscarPersona($entrada);
 
 ?>
 <!-- Resultado -->

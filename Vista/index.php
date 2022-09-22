@@ -106,7 +106,7 @@
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="accordion accordion-flush">
-                            <div class="accordion-item p-3"><a href="TP4/VerAutos.php">Ejercicio Autos</a>
+                            <div class="accordion-item p-3"><a href="TP4/index.php">Ejercicio Autos</a>
                             </div>
                         </div>
                     </div>

@@ -22,7 +22,9 @@ include_once "../../configuracion.php";
                     <div class="invalid-feedback">Obligatorio.</div>
                 </div>
                 <div class="col-12 mb-3 d-flex justify-content-center">
-                    <input type="submit" class="btn btn-primary mt-3" value="Buscar" />
+                    <a class="btn btn-primary mt-3 mx-1" href="index.php"><< Volver</a>
+                    <input type="submit" class="btn btn-primary mt-3 mx-1" value="Buscar" />
+
                 </div>
             </div>
         </form>

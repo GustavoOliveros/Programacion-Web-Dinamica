@@ -60,6 +60,7 @@ $resultado = $objControl->listarAutos();
         }
 
         ?>
+        <a class="btn btn-primary" href="index.php"><< Volver</a>
     </div>
 </main>
 
