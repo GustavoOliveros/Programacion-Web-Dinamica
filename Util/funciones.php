@@ -29,6 +29,13 @@ function mostrarError($contenidoError){
         '</div>';
 }
 
+function mostrarExito($contenidoExito){
+    return '
+        <div class="col-12 col-md-7 alert alert-sucess m-3 p-3 mx-auto">'.
+        $contenidoExito .
+        '</div>';
+}
+
 spl_autoload_register(function ($class_name){
     //echo "class ".$class_name ;
     $directorys = array(
