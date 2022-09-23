@@ -9,43 +9,13 @@ include_once "../Estructura/navbar.php";
 // Configuración
 include_once "../../configuracion.php";
 
-// Función para mostrar el arreglo
-/**
- * Muestra el arreglo de autos en html
- * @param $arregloAutos
- * @return string
- */
-function mostrarAutos($arregloAutos)
-{
-    $tabla = '<table class="table col-12 text-center mt-5">
-                <thead>
-                    <tr>
-                        <th scope="col">Patente</th>
-                        <th scope="col">Modelo</th>
-                        <th scope="col">Marca</th>
-                        <th scope="col">Nombre del Dueñ@</th>
-                        <th scope="col">Apellido del Dueñ@</th>
-                    </tr>
-                </thead>
-                <tbody>';
+// Funciones tp4
+include_once "../../Util/funciones_tp4.php";
 
-    foreach ($arregloAutos as $objAuto) {
-        $tabla .= '<tr>' .
-            '<td>' . $objAuto->getPatente() . '</td>' .
-            '<td>' . $objAuto->getModelo() . '</td>' .
-            '<td>' . $objAuto->getMarca() . '</td>' .
-            '<td>' . $objAuto->getObjPersonaDuenio()->getNombre() . '</td>' .
-            '<td>' . $objAuto->getObjPersonaDuenio()->getApellido() . '</td></tr>';
-    }
-    $tabla .= "</tbody></table>";
-
-
-    return $tabla;
-}
 
 // Contacto con control
-$objControl = new C_TP4();
-$resultado = $objControl->listarAutos();
+$objControl = new C_Auto();
+$resultado = $objControl->listar();
 ?>
 
 <!-- Listado -->
@@ -54,7 +24,7 @@ $resultado = $objControl->listarAutos();
         <h1 class="text-center">Autos</h1>
         <?php
         if($resultado["error"] == ""){
-            echo mostrarAutos($resultado["result"]);
+            echo mostrarAutos($resultado["result"], true);
         }else{
             echo mostrarError("No hay autos registrados.");
         }

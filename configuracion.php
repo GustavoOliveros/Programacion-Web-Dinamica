@@ -5,10 +5,10 @@ header ("Cache-Control: no-cache, must-revalidate ");
 // CONFIGURACION APP//
 /////////////////////////////
 
-$PROYECTO ='Programacion-Web-Dinamica';
+$PROYECTO ='PWD/Primera Entrega';
 
 //variable que almacena el directorio del proyecto
-$ROOT ="/export/home/gustavo.oliveros/public_html_lamptec/$PROYECTO/";
+$ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
 
 include_once($ROOT.'Util/funciones.php');
 

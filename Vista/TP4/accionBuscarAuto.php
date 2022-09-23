@@ -9,7 +9,11 @@ include_once "../Estructura/navbar.php";
 // Control
 include_once "../../configuracion.php";
 
-$objControl = new C_TP4();
+// Funciones tp4
+include_once "../../Util/funciones_tp4.php";
+
+// Contacto con control
+$objControl = new C_Auto();
 $entrada = data_submitted();
 $resultado = $objControl->buscar($entrada);
 
@@ -23,43 +27,24 @@ $resultado = $objControl->buscar($entrada);
                 echo mostrarError("
                 Los datos están incompletos. Por favor, inténtelo otra vez.<br>
                 <a href='BuscarAuto.php'>Haga clic acá para volver</a>
-            ");
+                ");
                 break;
             case 5:
                 echo mostrarError("
                 Los datos son inválidos. Por favor, inténtelo otra vez.<br>
                 <a href='BuscarAuto.php'>Haga clic acá para volver</a>
-            ");
+                ");
                 break;
             case 404:
                 echo mostrarError("
                 No se encontró el vehículo solicitado.<br>
                 <a href='BuscarAuto.php'>Haga clic acá para volver</a>
-            ");
+                ");
                 break;
             default:
                 // Todo salió bien
-                echo '  
-                <table class="table text-center mt-5">
-                <thead>
-                    <tr>
-                        <th scope="col">Patente</th>
-                        <th scope="col">Modelo</th>
-                        <th scope="col">Marca</th>
-                        <th scope="col">Nombre del Dueñ@</th>
-                        <th scope="col">Apellido del Dueñ@</th>
-                    </tr>
-                </thead>
-                <tbody> ' .
-                    '<tr>' .
-                    '<td>' . $resultado["result"]->getPatente() . '</td>' .
-                    '<td>' . $resultado["result"]->getModelo() . '</td>' .
-                    '<td>' . $resultado["result"]->getMarca() . '</td>' .
-                    '<td>' . $resultado["result"]->getObjPersonaDuenio()->getNombre() . '</td>' .
-                    '<td>' . $resultado["result"]->getObjPersonaDuenio()->getApellido() . '</td></tr>
-                </tbody></table>
-                <a href="BuscarAuto.php">Haga clic acá para volver</a>
-            ';
+                echo mostrarAutos(array($resultado["result"]), true);
+                echo '<a href="BuscarAuto.php">Haga clic acá para volver</a>';
                 break;
         }
         ?>

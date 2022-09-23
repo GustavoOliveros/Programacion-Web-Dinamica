@@ -22,28 +22,9 @@ class C_Auto{
         return $resultado;
     }
 
-    /**
-     * Retorna un arreglo con todos las personas
-     * @return array
-     */
-    public function listarPersonas(){
-        $resultado["result"] = null;
-        $resultado["error"] = null;
-
-        $objPersona = new Persona();
-        $arregloPersona = $objPersona->listar();
-
-        if(!is_null($arregloPersona)){
-            $resultado["result"] = $arregloPersona;
-        }else{
-            $resultado["error"] = 404;
-        }
-
-        return $resultado;
-    }
 
     /**
-     * Retorna un arreglo con todos los autos y el nombre y apellido de sus dueños
+     * Busca un auto
      * @param array $entrada
      * @return array
      */
@@ -75,8 +56,27 @@ class C_Auto{
         return $resultado;
     }
 
+    /**
+     * Busca el listado de autos para un mismo dueño
+     * @param object $objPersona
+     * @return array
+     */
+    public function buscarPorDuenio($objPersona){
+        $resultado["error"] = null;
+        $resultado["result"] = null; 
+
+        $objAuto = new Auto();
+        $arregloAutos = $objAuto->listar('DniDuenio = "' . $objPersona->getNumDNI() . '"');
+
+        if(!is_null($arregloAutos)){
+            $resultado["result"] = $arregloAutos;
+        }else{
+            // No encontró autos registrados al nombre de la persona
+            $resultado["error"] = 6;
+        }
+
+        return $resultado;
+    }
+
 
 }
-
-
-?>
