@@ -37,7 +37,7 @@ class C_Auto{
             $resultado["error"] = 4;
         }
 
-        if(is_null($resultado["error"]) && strlen($entrada["patente"]) > 8){
+        if(is_null($resultado["error"]) && strlen($entrada["patente"]) > 10){
             // Datos inválidos
             $resultado["error"] = 5; 
         }
@@ -78,5 +78,74 @@ class C_Auto{
         return $resultado;
     }
 
+    /**
+     * Da de alta un auto
+     * @param array $entrada
+     * @return object
+     */
+    public function alta($entrada)
+    {
+        $resultado["result"] = null;
+        $resultado["error"] = null;
+        $contador = 0;
 
+        print_r($entrada);
+
+        $indices = array("patente", "modelo", "marca", "numDNI");
+
+        while ($contador < count($indices) && is_null($resultado["error"])) {
+            $indiceRevisar = $indices[$contador];
+            if (!isset($entrada[$indiceRevisar])) {
+                // Alguno de los campos no llegó
+                $resultado["error"] = "4";
+            }
+            $contador++;
+        }
+
+        // Validacion DNI
+        if (!is_null($resultado["error"]) && strlen($entrada["numDNI"]) <= 9 && is_numeric($entrada["numDNI"])) {
+            $objPersona = new Persona();
+            if(!$objPersona->buscarPersona($entrada["numDNI"])){
+                // No encontró dueño
+                $resultado["error"] = 9;
+            }
+        }else{
+            $resultado["error"] = 5;
+            echo "si";
+        }
+
+        // Valida patente y revisa si esta registrado
+        if (!is_null($resultado["error"]) && strlen($entrada["patente"]) <= 10) {
+            $objAuto = new Auto();
+            if($objAuto->buscarAuto($entrada["patente"])){
+                $resultado["error"] = 8;
+                $resultado["result"] = $objAuto;
+            }
+        }else{
+            $resultado["error"] = 5;
+        }
+    
+
+        // Validacion del resto
+        if (is_null($resultado["error"]) && strlen($entrada["marca"]) > 50) {
+            $resultado["error"] = 5;
+        }
+        if (is_null($resultado["error"]) && strlen($entrada["modelo"]) > 11 || !is_numeric($entrada["modelo"])) {
+            $resultado["error"] = 5;
+        }
+
+        if (is_null($resultado["error"])) {
+            // Todo salio bien
+            $objAuto = new Auto();
+            $objAuto->cargar($entrada["patente"], $entrada["marca"], $entrada["modelo"], $objPersona);
+            if ($objAuto->insertar()) {
+                $resultado["result"] = $objAuto;
+            } else {
+                // Error al insertar
+                $resultado["error"] = 7;
+            }
+        }
+
+        return $resultado;
+    }
 }

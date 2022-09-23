@@ -9,13 +9,7 @@ include_once "../Estructura/navbar.php";
 // Configuración
 include_once "../../configuracion.php";
 
-// – Crear una página “NuevaPersona.php” que contenga un formulario que permita solicitar todos
-// los datos de una persona (DNI, NOMBRE, APELLIDO, FECHA NAC, DOMICILIO, TELEFONO). Estos datos serán enviados a una página “accionNuevaPersona.php” que cargue
-// un nuevo registro en la tabla persona de la base de datos. Se debe mostrar un mensaje que indique si se
-// pudo o no cargar los datos de la persona. Utilizar css y validaciones javaScript cuando crea conveniente.
-// Recordar usar la capa de control antes generada, no se puede acceder directamente a las clases del ORM.
-
-// FALTA CONTROL (ALTA) Y ACCION
+$entrada = data_submitted();
 
 ?>
 
@@ -27,7 +21,7 @@ include_once "../../configuracion.php";
             <div class="row">
                 <div class="col-12 col-lg-4 mx-auto position-relative">
                     <label for="numDNI" class="form-label">Número de DNI</label>
-                    <input type="number" min="0" max="999999999" class="form-control" id="numDNI" name="numDNI" required />
+                    <input type="number" min="0" max="999999999" class="form-control" id="numDNI" name="numDNI" <?php if(isset($entrada["numDNI"])){echo "value=" . $entrada["numDNI"];} ?> required />
                     <div class="invalid-feedback">
                         Dato inválido.
                     </div>

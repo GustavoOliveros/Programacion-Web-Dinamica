@@ -1,6 +1,6 @@
 <?php
 // Encabezado
-$titulo = "Añadir Persona - TP 4";
+$titulo = "Actualizar Persona - TP 4";
 include_once "../Estructura/encabezado.php";
 
 // Navbar
@@ -15,7 +15,7 @@ include_once "../../Util/funciones_tp4.php";
 // Contacto con control
 $objControl = new C_Persona();
 $entrada = data_submitted();
-$resultado = $objControl->alta($entrada);
+$resultado = $objControl->modificar($entrada);
 
 ?>
 <!-- Resultado -->
@@ -26,35 +26,28 @@ $resultado = $objControl->alta($entrada);
             case 4:
                 echo mostrarError("
                 Los datos están incompletos. Por favor, inténtelo otra vez.<br>
-                <a href='NuevaPersona.php'>Haga clic acá para volver</a>
+                <a href='accionBuscarPersona.php?numDNI=". $entrada["numDNI"] ."'>Haga clic acá para intentar otra vez</a>
                 ");
                 break;
             case 5:
                 echo mostrarError("
                 Los datos son inválidos. Por favor, inténtelo otra vez.<br>
-                <a href='NuevaPersona.php'>Haga clic acá para volver</a>
+                <a href='accionBuscarPersona.php?numDNI=". $entrada["numDNI"] ."'>Haga clic acá para intentar otra vez</a>
                 ");
                 break;
             case 7:
                 echo mostrarError("
-                Ocurrio un error al añadir a la persona. Por favor, inténtelo de nuevo<br>
-                <a href='NuevaPersona.php'>Haga clic acá para volver</a>
+                Ocurrió un error al modificar a la persona o no realizo ninguna modificación.<br>
+                <a href='accionBuscarPersona.php?numDNI=". $entrada["numDNI"] ."'>Haga clic acá para intentar otra vez</a>
                 ");
-                break;
-            case 8:
-                echo mostrarError("
-                La persona ingresada ya existe.
-                ");
-                echo mostrarPersonas(array($resultado["result"]), false);
-                echo "<a href='NuevaPersona.php'>Haga clic acá para volver</a>";
                 break;
             default:
                 // Todo salió bien
                 echo mostrarExito("
-                La persona se agregó con éxito.
+                La persona se modificó con éxito.
                 ");
                 echo mostrarPersonas(array($resultado["result"]), false);
-                echo '<a href="NuevaPersona.php">Haga clic acá para volver</a>';
+                echo "<a href='index.php'>Haga clic acá para volver</a>";
                 break;
         }
         ?>

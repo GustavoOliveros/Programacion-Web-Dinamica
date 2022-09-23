@@ -8,7 +8,8 @@ header ("Cache-Control: no-cache, must-revalidate ");
 $PROYECTO ='PWD/Primera Entrega';
 
 //variable que almacena el directorio del proyecto
-$ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
+// $ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
+$ROOT = "/export/home/gustavo.oliveros/public_html_lamptec/Programacion-Web-Dinamica/";
 
 include_once($ROOT.'Util/funciones.php');
 

@@ -31,7 +31,7 @@ function mostrarError($contenidoError){
 
 function mostrarExito($contenidoExito){
     return '
-        <div class="col-12 col-md-7 alert alert-sucess m-3 p-3 mx-auto">'.
+        <div class="col-12 col-md-7 alert alert-success m-3 p-3 mx-auto">'.
         $contenidoExito .
         '</div>';
 }

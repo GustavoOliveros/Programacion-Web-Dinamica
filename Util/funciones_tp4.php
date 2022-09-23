@@ -11,7 +11,7 @@ function mostrarPersonas($arregloPersonas, $expandir)
     $expansion["body"] = "";
  
     if($expandir){
-        $expansion["head"] = '<th scope="col">Más información</th>';
+        $expansion["head"] = '<th scope="col">Autos</th>';
     }
 
     $tabla = '<div class="table-responsive"><table class="table col-12 text-center mt-5">
@@ -30,7 +30,7 @@ function mostrarPersonas($arregloPersonas, $expandir)
 
     foreach ($arregloPersonas as $objPersona) {
         if($expandir){
-            $expansion["body"] = '<td><a href="autosPersona.php?dni='. $objPersona->getNumDNI() . '">Expandir</a></td>';
+            $expansion["body"] = '<td><a href="autosPersona.php?numDNI='. $objPersona->getNumDNI() . '">Ver autos</a></td>';
         }
         $tabla .= '<tr>' .
             '<td>' . $objPersona->getNumDNI() . '</td>' .

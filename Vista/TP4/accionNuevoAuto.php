@@ -1,6 +1,6 @@
 <?php
 // Encabezado
-$titulo = "Añadir Persona - TP 4";
+$titulo = "Añadir Auto - TP 4";
 include_once "../Estructura/encabezado.php";
 
 // Navbar
@@ -13,7 +13,7 @@ include_once "../../configuracion.php";
 include_once "../../Util/funciones_tp4.php";
 
 // Contacto con control
-$objControl = new C_Persona();
+$objControl = new C_Auto();
 $entrada = data_submitted();
 $resultado = $objControl->alta($entrada);
 
@@ -47,6 +47,10 @@ $resultado = $objControl->alta($entrada);
                 ");
                 echo mostrarPersonas(array($resultado["result"]), false);
                 echo "<a href='NuevaPersona.php'>Haga clic acá para volver</a>";
+                break;
+            case 9:
+                echo mostrarError("El dueño ingresado no está registrado.<br>
+                <a href='NuevaPersona.php?numDNI=". $resultado["result"]->getNumDNI() . '">Haga clic acá para añadirlo</a>');
                 break;
             default:
                 // Todo salió bien
