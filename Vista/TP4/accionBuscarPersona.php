@@ -36,10 +36,9 @@ $resultado = $objControl->buscar($entrada);
                 ");
                 break;
             case 404:
-                echo mostrarError("
+                echo mostrarError('
                 No se encontró a la persona solicitada.<br>
-                <a href='BuscarPersona.php'>Haga clic acá para volver</a>
-                ");
+                <a href="NuevaPersona.php?numDNI='. $entrada["numDNI"] . '">Haga clic acá para añadirlo</a>');
                 break;
             default:
                 // Todo salió bien
