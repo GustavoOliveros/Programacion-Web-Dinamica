@@ -10,6 +10,9 @@ include_once "../Estructura/navbar.php";
 include_once "../../configuracion.php";
 
 $entrada = data_submitted();
+if(isset($entrada["patente"])){
+    $entrada["patente"] = str_replace(" ","&nbsp;",$entrada["patente"]);
+}
 
 ?>
 

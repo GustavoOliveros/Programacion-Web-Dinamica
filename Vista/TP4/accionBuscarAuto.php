@@ -36,15 +36,14 @@ $resultado = $objControl->buscar($entrada);
                 ");
                 break;
             case 404:
-                echo mostrarError("
-                No se encontró el vehículo solicitado.<br>
-                <a href='BuscarAuto.php'>Haga clic acá para volver</a>
-                ");
+                $entrada["patente"] = str_replace(" ","+",$entrada["patente"]);
+                echo mostrarError('El auto no se encontró.<br>
+                <a href="NuevoAuto.php?patente='. $entrada["patente"] . '">Haga clic acá para añadirlo</a>');
                 break;
             default:
                 // Todo salió bien
                 echo mostrarAutos(array($resultado["result"]), true);
-                echo '<a href="BuscarAuto.php">Haga clic acá para volver</a>';
+                echo '<a href="index.php">Haga clic acá para volver</a>';
                 break;
         }
         ?>

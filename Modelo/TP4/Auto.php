@@ -91,14 +91,15 @@ class Auto{
         if($base->Iniciar()){
             if($base->Ejecutar($consulta)){
                 if($fila = $base->Registro()){
-                    $this->setPatente($patente);
-                    $this->setMarca($fila["Marca"]);
-                    $this->setModelo($fila["Modelo"]);
-                    
                     // Delegación: Persona (Duenio)
                     $objPersonaDuenio = new Persona();
                     $objPersonaDuenio->buscarPersona($fila["DniDuenio"]);
-                    $this->setObjPersonaDuenio($objPersonaDuenio);
+
+                    $this->cargar(
+                        $patente,
+                        $fila["Marca"],
+                        $fila["Modelo"],
+                        $objPersonaDuenio);
 
                     $encontro = true;
                 }

@@ -38,7 +38,7 @@ class C_Persona
             $resultado["error"] = 4;
         }
 
-        if (is_null($resultado["error"]) && strlen($entrada["numDNI"]) > 9 || !is_numeric($entrada["numDNI"])) {
+        if (is_null($resultado["error"]) && (strlen($entrada["numDNI"]) > 9 || !is_numeric($entrada["numDNI"]))) {
             // Datos inválidos
             $resultado["error"] = 5;
         }

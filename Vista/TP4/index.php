@@ -26,7 +26,7 @@ include_once "../../configuracion.php";
         <div class="col-12 text-center mb-3">
             <a class="btn btn-primary col-3" href="listaPersonas.php">Listar Personas</a>
             <a class="btn btn-primary col-3" href="NuevaPersona.php">Añadir Persona</a>
-            <a class="btn btn-primary col-3" href="BuscarPersona.php">Buscar Persona</a>
+            <a class="btn btn-primary col-3" href="BuscarPersona.php">Buscar - Editar Persona</a>
         </div>
         <div class="col-12 text-center">
             <a class="btn btn-primary col-3" href="CambioDuenio.php">Cambiar dueño</a>

@@ -37,7 +37,7 @@ $resultado = $objControl->cambiarDuenio($entrada);
                 break;
             case 7:
                 echo mostrarError("
-                Ocurrio un error al hacer el cambio. Por favor, inténtelo de nuevo<br>
+                Ocurrio un error al hacer el cambio o el auto ya está registrado a nombre de esa persona.<br>
                 <a href='CambioDuenio.php'>Haga clic acá para volver</a>
                 ");
                 break;
@@ -46,6 +46,7 @@ $resultado = $objControl->cambiarDuenio($entrada);
                 <a href="NuevaPersona.php?numDNI='. $entrada["numDNI"] . '">Haga clic acá para añadirlo</a>');
                 break;
             case 10:
+                $entrada["patente"] = str_replace(" ","+",$entrada["patente"]);
                 echo mostrarError('El auto ingresado no está registrado.<br>
                 <a href="NuevoAuto.php?patente='. $entrada["patente"] . '">Haga clic acá para añadirlo</a>');
                 break;

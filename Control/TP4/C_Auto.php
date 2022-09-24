@@ -35,6 +35,8 @@ class C_Auto{
         if(!isset($entrada["patente"])){
             // Alguno de los campos no llegó
             $resultado["error"] = 4;
+        }else{
+            $entrada["patente"] = strtoupper($entrada["patente"]);
         }
 
         if(is_null($resultado["error"]) && strlen($entrada["patente"]) > 10){
@@ -131,7 +133,7 @@ class C_Auto{
         if (is_null($resultado["error"]) && strlen($entrada["marca"]) > 50) {
             $resultado["error"] = 5;
         }
-        if (is_null($resultado["error"]) && strlen($entrada["modelo"]) > 11 || !is_numeric($entrada["modelo"])) {
+        if (is_null($resultado["error"]) && (strlen($entrada["modelo"]) > 11 || !is_numeric($entrada["modelo"]))) {
             $resultado["error"] = 5;
         }
 

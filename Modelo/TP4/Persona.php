@@ -119,12 +119,14 @@ class Persona{
             if($base->Ejecutar($consulta)){
                 if($fila = $base->Registro()){
                     $encontro = true;
-                    $this->setNumDNI($numDNI);
-                    $this->setApellido($fila["Apellido"]);
-                    $this->setNombre($fila["Nombre"]);
-                    $this->setFechaNac($fila["fechaNac"]);
-                    $this->setTelefono($fila["Telefono"]);
-                    $this->setDomicilio($fila["Domicilio"]);
+                    $this->cargar(
+                        $numDNI,
+                        $fila["Apellido"],
+                        $fila["Nombre"],
+                        $fila["fechaNac"],
+                        $fila["Telefono"],
+                        $fila["Domicilio"]
+                    );
                 }
             }else{$this->setMensajeOperacion($base->getError());}
         }else{$this->setMensajeOperacion($base->getError());}

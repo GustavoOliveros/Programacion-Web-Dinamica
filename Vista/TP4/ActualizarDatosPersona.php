@@ -37,7 +37,7 @@ $resultado = $objControl->modificar($entrada);
                 break;
             case 7:
                 echo mostrarError("
-                Ocurrió un error al modificar a la persona o no realizo ninguna modificación.<br>
+                Ocurrió un error al modificar a la persona o usted no realizo ninguna modificación.<br>
                 <a href='accionBuscarPersona.php?numDNI=". $entrada["numDNI"] ."'>Haga clic acá para intentar otra vez</a>
                 ");
                 break;
