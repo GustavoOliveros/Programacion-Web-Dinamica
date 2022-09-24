@@ -54,7 +54,7 @@ $resultado = $objControl->alta($entrada);
                 La persona se agregó con éxito.
                 ");
                 echo mostrarPersonas(array($resultado["result"]), false);
-                echo '<a href="NuevaPersona.php">Haga clic acá para volver</a>';
+                echo '<a href="index.php">Haga clic acá para volver</a>';
                 break;
         }
         ?>

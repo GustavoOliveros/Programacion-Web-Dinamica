@@ -12,7 +12,7 @@ include_once "../../configuracion.php";
 ?>
 
 <!-- Formulario -->
-<main class="col-12 my-3 d-flex align-items-Acenter justify-content-center flex-column">
+<main class="col-12 my-3 d-flex align-items-center justify-content-center flex-column">
     <div class="col-12 col-md-6">
         <form action="accionBuscarAuto.php" method="get" class="needs-validation" id="form" name="form" novalidate>
             <div class="row">

@@ -1,14 +1,4 @@
 <?php
-// Ejercicio 5 – Crear una página “NuevoAuto.php” que contenga un formulario en el que se permita cargar
-// todos los datos de un auto (incluso su dueño). Estos datos serán enviados a una página
-// “accionNuevoAuto.php” que cargue un nuevo registro en la tabla auto de la base de datos. Se debe chequear
-// antes que la persona dueña del auto ya se encuentre cargada en la base de datos, de no ser así mostrar un
-// link a la página que permite carga una nueva persona. Se debe mostrar un mensaje que indique si se pudo o
-// no cargar los datos Utilizar css y validaciones javaScript cuando crea conveniente. Recordar usar la capa de
-// control antes generada, no se puede acceder directamente a las clases del ORM.
-?>
-
-<?php
 // Encabezado
 $titulo = "Nuevo Auto - TP 4";
 include_once "../Estructura/encabezado.php";
@@ -31,7 +21,7 @@ $entrada = data_submitted();
             <div class="row">
                 <div class="col-12 col-lg-6 mx-auto position-relative">
                     <label for="patente" class="form-label">Patente</label>
-                    <input type="text" maxlength="10" class="form-control" id="patente" name="patente" required />
+                    <input type="text" maxlength="10" class="form-control" id="patente" name="patente" <?php if(isset($entrada["patente"])){echo "value=" . $entrada["patente"];} ?> required />
                     <div class="invalid-feedback">
                         Dato inválido.
                     </div>

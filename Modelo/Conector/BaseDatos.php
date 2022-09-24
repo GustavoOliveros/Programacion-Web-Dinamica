@@ -14,9 +14,9 @@ class BaseDatos extends PDO {
     public function __construct(){
         $this->engine = 'mysql';
         $this->host = 'localhost';
-        $this->database = 'pwd_goliveros';
-        $this->user = 'pwd_goliveros';
-        $this->pass = 'pwd_goliveros';
+        $this->database = 'infoautos';
+        $this->user = 'root';
+        $this->pass = '';
         $this->debug = true;
         $this->error ="";
         $this->sql ="";
@@ -42,20 +42,11 @@ class BaseDatos extends PDO {
         return $this->getConec();
         
     }
-    
-  
-    
-    
-    
-    
-    
+
     public function getConec(){
         return $this->conec;
     }
-    
-    
-    
-    
+
     public function setDebug($debug){
         $this->debug = $debug;
     }
@@ -68,10 +59,7 @@ class BaseDatos extends PDO {
      * Funcion que setea la variable instancia error
      */
     public function setError($e){
-      
         $this->error = $e;
-        
-        
     }
         
     /**
@@ -80,7 +68,6 @@ class BaseDatos extends PDO {
      */
     public function getError(){
         return "\n".$this->error;
-        
     }
     
     /**
@@ -88,7 +75,6 @@ class BaseDatos extends PDO {
      */
     public function setSQL($e){
         return "\n".$this->sql = $e;
-        
     }
     
     /**
@@ -97,7 +83,6 @@ class BaseDatos extends PDO {
      */
     public function getSQL(){
         return "\n".$this->sql;
-        
     }
     
     public function Ejecutar($sql){
@@ -122,7 +107,6 @@ class BaseDatos extends PDO {
     *Si se inserta en una tabla que tiene una columna autoincrement se retorna el id con el que se inserto el registro
     *caso contrario se retorna -1
     */
-   
    private function EjecutarInsert($sql){
        $resultado=parent::query($sql);
        if(!$resultado){
@@ -161,7 +145,6 @@ class BaseDatos extends PDO {
     * @return integer
     *
     */
-   
    private function EjecutarSelect($sql){
        $cant = -1;
        $resultado=parent::query($sql);
@@ -201,7 +184,7 @@ class BaseDatos extends PDO {
        }
        return $filaActual;
    }
-   
+
    /**
     * Esta funcion si esta seteado la variable instancia $this->debug visualiza el debug
     */
@@ -213,31 +196,21 @@ class BaseDatos extends PDO {
            print_r($e);
            echo "</pre>";
        }
-       
-       
    }
-   
+
    private function setIndice ($valor){
        $this->indice = $valor;
    }
-   
+
    private function getIndice (){
        return $this->indice;
-       
    }
+
    private function setResultado($valor){
-       $this->resultado = $valor;
-       
+       $this->resultado = $valor; 
    }
+   
    private function getResultado(){
-      
       return $this->resultado;
    }
-   
-   
-   
-   
-
-   
- 
 } 

@@ -1,6 +1,6 @@
 <?php
 // Encabezado
-$titulo = "Añadir Auto - TP 4";
+$titulo = "Cambio de Dueño - TP 4";
 include_once "../Estructura/encabezado.php";
 
 // Navbar
@@ -15,7 +15,7 @@ include_once "../../Util/funciones_tp4.php";
 // Contacto con control
 $objControl = new C_Auto();
 $entrada = data_submitted();
-$resultado = $objControl->alta($entrada);
+$resultado = $objControl->cambiarDuenio($entrada);
 
 ?>
 <!-- Resultado -->
@@ -26,36 +26,33 @@ $resultado = $objControl->alta($entrada);
             case 4:
                 echo mostrarError("
                 Los datos están incompletos. Por favor, inténtelo otra vez.<br>
-                <a href='NuevoAuto.php'>Haga clic acá para volver</a>
+                <a href='CambioDuenio.php'>Haga clic acá para volver</a>
                 ");
                 break;
             case 5:
                 echo mostrarError("
                 Los datos son inválidos. Por favor, inténtelo otra vez.<br>
-                <a href='NuevoAuto.php'>Haga clic acá para volver</a>
+                <a href='CambioDuenio.php'>Haga clic acá para volver</a>
                 ");
                 break;
             case 7:
                 echo mostrarError("
-                Ocurrio un error al añadir a el auto. Por favor, inténtelo de nuevo<br>
-                <a href='NuevoAuto.php'>Haga clic acá para volver</a>
+                Ocurrio un error al hacer el cambio. Por favor, inténtelo de nuevo<br>
+                <a href='CambioDuenio.php'>Haga clic acá para volver</a>
                 ");
-                break;
-            case 8:
-                echo mostrarError("
-                El auto ingresado ya existe.
-                ");
-                echo mostrarAutos(array($resultado["result"]), true);
-                echo "<a href='index.php'>Haga clic acá para volver</a>";
                 break;
             case 9:
                 echo mostrarError('El dueño ingresado no está registrado.<br>
                 <a href="NuevaPersona.php?numDNI='. $entrada["numDNI"] . '">Haga clic acá para añadirlo</a>');
                 break;
+            case 10:
+                echo mostrarError('El auto ingresado no está registrado.<br>
+                <a href="NuevoAuto.php?patente='. $entrada["patente"] . '">Haga clic acá para añadirlo</a>');
+                break;
             default:
                 // Todo salió bien
                 echo mostrarExito("
-                El auto se agregó con éxito.
+                El cambio se realizó con éxito.
                 ");
                 echo mostrarAutos(array($resultado["result"]), true);
                 echo '<a href="index.php">Haga clic acá para volver</a>';
