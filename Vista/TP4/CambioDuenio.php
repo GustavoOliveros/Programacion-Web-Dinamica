@@ -20,11 +20,11 @@ include_once "../../configuracion.php";
                 <h1 class="text-center">Cambio de dueño</h1>
                 <div class="col-12 col-lg-6 mx-auto position-relative">
                     <input type="number" placeholder="Número de DNI" min="0" max="999999999" class="form-control" id="numDNI" name="numDNI" required />
-                    <div class="invalid-feedback">Ingrese DNI válido.</div>
+                    <div class="invalid-feedback">Número de DNI inválido<br>Debe contener solo números (9 caracteres max.)</div>
                 </div>
                 <div class="col-12 col-lg-6 mx-auto position-relative">
-                    <input type="text" maxlength="10" placeholder="Patente del auto" class="form-control" id="patente" name="patente" required />
-                    <div class="invalid-feedback">Obligatorio.</div>
+                    <input type="text" maxlength="10" placeholder="Patente del auto" class="form-control" id="patente" name="patente" pattern="^[a-zA-Z]{3}\s[0-9]{3}?$" required />
+                    <div class="invalid-feedback">Patente inválida.<br>(Formato: ABC 123)</div>
                 </div>
                 <div class="col-12 mb-3 d-flex justify-content-center">
                     <a class="btn btn-primary mt-3 mx-1" href="index.php"><< Volver</a>

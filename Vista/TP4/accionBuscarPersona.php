@@ -48,44 +48,47 @@ $resultado = $objControl->buscar($entrada);
                         <div class="row">
                             <div class="col-12 col-lg-4 mx-auto position-relative">
                                 <label for="numDNI" class="form-label">Número de DNI</label>
-                                <input type="number" class="form-control" id="numDNI" name="numDNI" value='. $resultado["result"]->getNumDNI() .' readonly />
+                                <input type="number" min="0" max="999999999" class="form-control" id="numDNI" name="numDNI" value="'. $resultado["result"]->getNumDNI() .'" readonly />
+                                <div class="invalid-feedback">
+                                    Número de DNI inválido<br>Debe contener solo números (9 caracteres max.)
+                                </div>
                             </div>
                             <div class="col-12 col-lg-4 mx-auto position-relative">
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" value="'. $resultado["result"]->getNombre() .'" required />
+                                <input type="text" class="form-control" id="nombre" name="nombre" maxlength="50" value="'. $resultado["result"]->getNombre() .'" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]{1,50}" required />
                                 <div class="invalid-feedback">
-                                    Dato inválido.
+                                    Nombre inválido.<br>Debe contener solo letras (50 caracteres max.)
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 mx-auto position-relative">
                                 <label for="apellido" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" id="apellido" name="apellido" value="'. $resultado["result"]->getApellido() .'" required />
+                                <input type="text" class="form-control" id="apellido" name="apellido" maxlength="50" value="'. $resultado["result"]->getApellido() .'" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]{1,50}" required />
                                 <div class="invalid-feedback">
-                                    Dato inválido.
+                                    Apellido inválido.<br>Debe contener solo letras (50 caracteres max.)
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 col-lg-4 mx-auto position-relative">
                                 <label for="fechaNac" class="form-label">Fecha de Nacimiento</label>
-                                <input type="date" class="form-control" id="fechaNac" name="fechaNac" min="1900-01-01" max="2006-12-31" value="'. $resultado["result"]->getFechaNac() .'" required />
+                                <input type="date" class="form-control" id="fechaNac" name="fechaNac" min="1900-01-01" value="'. $resultado["result"]->getFechaNac() .'" max="2006-12-31" required />
                                 <div class="invalid-feedback">
-                                    Dato inválido.
+                                    Fecha de nacimiento inválida.<br>Debe ser mayor a 16 años.
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 mx-auto position-relative">
                                 <label for="domicilio" class="form-label">Domicilio</label>
                                 <input type="text" maxlength="200" class="form-control" id="domicilio" name="domicilio" value="'. $resultado["result"]->getDomicilio() .'" required />
                                 <div class="invalid-feedback">
-                                    Dato inválido.
+                                    Domicilio inválido.
                                 </div>
                             </div>
-            
+
                             <div class="col-12 col-lg-4 mx-auto position-relative">
                                 <label for="telefono" class="form-label">Telefono</label>
-                                <input type="text" maxlength="20" class="form-control" id="telefono" name="telefono" value="'. $resultado["result"]->getTelefono() .'" required />
+                                <input type="text" maxlength="11" minlength="11" class="form-control" id="telefono" name="telefono" value="'. $resultado["result"]->getTelefono() .'" pattern="[0-9]\d\d[-][0-9]\d\d\d\d\d\d" required />
                                 <div class="invalid-feedback">
-                                    Dato inválido.
+                                    Teléfono inválido (Formato: 299-1234567)
                                 </div>
                             </div>
                         </div>
@@ -93,7 +96,7 @@ $resultado = $objControl->buscar($entrada);
                             <a class="btn btn-primary mt-3 mx-1" href="index.php">
                                 << Volver</a>
                                     <input type="submit" class="btn btn-primary mt-3 mx-1" />
-            
+
                         </div>
                     </form>';
                 break;
