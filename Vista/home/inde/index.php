@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programación Web Dinámica 2022</title>
-    <link rel="stylesheet" href="lib/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/bootstrap-5.2.0-dist/css/bootstrap.min.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100 justify-content-center">
+
     <div class="container" style="max-width: 992px;">
         <h1 class="text-center">Programación Web Dinámica - Grupo 6</h1>
         <p class="text-center">Gustavo Oliveros - Gonzalo Olmos - Jose Centena</p>
@@ -106,7 +107,22 @@
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="accordion accordion-flush">
-                            <div class="accordion-item p-3"><a href="TP4/index.php">Ejercicio Autos</a>
+                            <div class="accordion-item p-3"><a href="../../TP4/ind/index.php">Ejercicio Autos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="TPLU">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFour">
+                        PHP Trabajo Práctico Librerias Útiles
+                    </button> 
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="accordion accordion-flush">
+                            <div class="accordion-item p-3"><a href="../../TP Librerias Utiles/libreria/index.php">Librerias Codigo de Barra</a>
                             </div>
                         </div>
                     </div>
@@ -114,8 +130,9 @@
             </div>
         </div>
     </div>
-    </div>
-    <script src="lib/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
+    
+    
+    <script src="../../lib/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -18,8 +18,8 @@ include_once "../../configuracion.php";
             <div class="row">
                 <h1 class="text-center">Búsqueda de Auto</h1>
                 <div class="col-6 col-lg-3 mx-auto position-relative">
-                    <input type="text" maxlength="10" placeholder="Patente" class="form-control" id="patente" name="patente" pattern="^[a-zA-Z]{3}\s[0-9]{3}?$" required />
-                    <div class="invalid-feedback">Patente inválida.<br>(Formato: ABC 123)</div>
+                    <input type="text" maxlength="10" placeholder="Patente" class="form-control" id="patente" name="patente" required />
+                    <div class="invalid-feedback">Obligatorio.</div>
                 </div>
                 <div class="col-12 mb-3 d-flex justify-content-center">
                     <a class="btn btn-primary mt-3 mx-1" href="index.php"><< Volver</a>

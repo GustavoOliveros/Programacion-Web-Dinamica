@@ -24,30 +24,30 @@ if(isset($entrada["patente"])){
             <div class="row">
                 <div class="col-12 col-lg-6 mx-auto position-relative">
                     <label for="patente" class="form-label">Patente</label>
-                    <input type="text" maxlength="10" class="form-control" id="patente" name="patente" pattern="^[a-zA-Z]{3}\s[0-9]{3}?$" <?php if(isset($entrada["patente"])){echo "value=" . $entrada["patente"];} ?> required />
+                    <input type="text" maxlength="10" class="form-control" id="patente" name="patente" <?php if(isset($entrada["patente"])){echo "value=" . $entrada["patente"];} ?> required />
                     <div class="invalid-feedback">
-                        Patente inválida.<br>(Formato: ABC 123)
+                        Dato inválido.
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 mx-auto position-relative">
                     <label for="modelo" class="form-label">Modelo (año)</label>
                     <input type="number" min="0" max="9999" class="form-control" id="modelo" name="modelo" required />
                     <div class="invalid-feedback">
-                        Ingrese un año válido (Por ejemplo, 1998 o 98)
+                        Dato inválido.
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 mx-auto position-relative">
                     <label for="marca" class="form-label">Marca</label>
-                    <input type="text" maxlength="50" class="form-control" id="marca" name="marca" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}" required />
+                    <input type="text" maxlength="50" class="form-control" id="marca" name="marca" required />
                     <div class="invalid-feedback">
-                        Marca inválida.<br>Debe contener solo letras (50 caracteres max.)
+                        Dato inválido.
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 mx-auto position-relative">
                     <label for="fechaNac" class="form-label">Número de DNI del Dueño</label>
                     <input type="number" min="0" max="999999999" class="form-control" id="numDNI" name="numDNI" required />
                     <div class="invalid-feedback">
-                        Número de DNI inválido<br>Debe contener solo números (9 caracteres max.)
+                        Dato inválido.
                     </div>
                 </div>
             </div>

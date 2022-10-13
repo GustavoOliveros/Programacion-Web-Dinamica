@@ -11,8 +11,8 @@
         </ul>
     </footer>
 </div>
-<script src="../lib/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
-<script src="../js/main.js"></script>
+<script src="../../lib/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
+<script src="../../js/main.js"></script>
 </body>
 
 </html>

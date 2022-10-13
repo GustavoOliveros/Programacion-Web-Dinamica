@@ -1,16 +1,16 @@
 <?php
 // Encabezado
 $titulo = "Ver Autos - TP 4";
-include_once "../Estructura/encabezado.php";
+include_once "../../Estructura/encabezado.php";
 
 // Navbar
-include_once "../Estructura/navbar.php";
+include_once "../../Estructura/navbar.php";
 
 // Configuración
-include_once "../../configuracion.php";
+include_once "../../../configuracion.php";
 
 // Funciones tp4
-include_once "../../Util/funciones_tp4.php";
+include_once "../../../Util/funciones_tp4.php";
 
 
 // Contacto con control
@@ -30,11 +30,11 @@ $resultado = $objControl->listar();
         }
 
         ?>
-        <a class="btn btn-primary" href="index.php"><< Volver</a>
+        <a class="btn btn-primary" href="../ind/index.php"><< Volver</a>
     </div>
 </main>
 
 <?php
 // Footer
-include_once "../Estructura/footer.php";
+include_once "../../Estructura/footer.php";
 ?>

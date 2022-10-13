@@ -1,13 +1,13 @@
 <?php
 // Encabezado
 $titulo = "TP 4";
-include_once "../Estructura/encabezado.php";
+include_once "../../Estructura/encabezado.php";
 
 // Navbar
-include_once "../Estructura/navbar.php";
+include_once "../../Estructura/navbar.php";
 
 // Configuración
-include_once "../../configuracion.php";
+include_once "../../../configuracion.php";
 
 ?>
 
@@ -16,10 +16,10 @@ include_once "../../configuracion.php";
     <div class="col-12 col-md-6 mb-5">
         <h1 class="text-center my-3">Autos - TP 4</h1>
         <div class="col-12 mb-3">
-            <img src="../img/auto.jpg" alt="Auto" class="rounded img-fluid">
+            <img src="../../img/auto.jpg" alt="Auto" class="rounded img-fluid">
         </div>
         <div class="col-12 text-center mb-3">
-            <a class="btn btn-primary col-3" href="VerAutos.php">Listar Autos</a>
+            <a class="btn btn-primary col-3" href="../auto/VerAutos.php">Listar Autos</a>
             <a class="btn btn-primary col-3" href="NuevoAuto.php">Añadir Auto</a>
             <a class="btn btn-primary col-3" href="BuscarAuto.php">Buscar Auto</a>
         </div>
@@ -36,5 +36,5 @@ include_once "../../configuracion.php";
 
 <?php
 // Footer
-include_once "../Estructura/footer.php";
+include_once "../../Estructura/footer.php";
 ?>
