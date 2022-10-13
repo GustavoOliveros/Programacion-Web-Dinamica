@@ -57,12 +57,18 @@ class AbmProductos{
      * @param array $param
      */
     public function alta($param){
-        $resp = false;
+        $resp = array();
         //$param['Patente'] =null;
         $elObjtTabla = $this->cargarObjeto($param);
         if ($elObjtTabla!=null and $elObjtTabla->insertar()){
-            $resp = true;
+           // $resp = true;
+            $resp = array('resultado'=> true,'error'=>'');
+        }else {
+           // $resp = false;
+            $resp = array('resultado'=> false,'error'=> $elObjtTabla->getmensajeoperacion());
         }
+        //echo $elObjtTabla->getmensajeoperacion();
+    
         return $resp;
 
     }

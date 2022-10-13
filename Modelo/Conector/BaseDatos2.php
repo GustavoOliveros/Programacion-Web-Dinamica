@@ -67,7 +67,7 @@ class BaseDatos2 extends PDO {
      * @return 
      */
     public function getError(){
-        return "\n".$this->error;
+        return "\n".$this->error[2];
     }
     
     /**
@@ -192,9 +192,9 @@ class BaseDatos2 extends PDO {
        $e = $this->errorInfo();
        $this->setError($e);
        if($this->getDebug()){
-           echo "<pre>";
-           print_r($e);
-           echo "</pre>";
+          // echo "<pre>";
+           //print_r($e);
+         //  echo "</pre>";
        }
    }
 
