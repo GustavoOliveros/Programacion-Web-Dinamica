@@ -122,7 +122,7 @@
                 <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="accordion accordion-flush">
-                            <div class="accordion-item p-3"><a href="../../TP Librerias Utiles/libreria/index.php">Librerias Codigo de Barra</a>
+                            <div class="accordion-item p-3"><a href="../../TP Librerias Utiles/index/index.php">Librerias Codigo de Barra</a>
                             </div>
                         </div>
                     </div>

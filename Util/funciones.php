@@ -18,6 +18,20 @@ function data_submitted() {
         
 }
 
+function mostrarError($contenidoError){
+    return '
+        <div class="col-12 col-md-7 alert alert-danger m-3 p-3 mx-auto">'.
+        $contenidoError .
+        '</div>';
+}
+
+function mostrarExito($contenidoExito){
+    return '
+        <div class="col-12 col-md-7 alert alert-success m-3 p-3 mx-auto">'.
+        $contenidoExito .
+        '</div>';
+}
+
 function verEstructura($e){
     echo "<pre>";
     print_r($e);
@@ -28,8 +42,8 @@ spl_autoload_register(function($class_name){
     //echo "class ".$class_name ;
     $directorys = array(
          $_SESSION['ROOT'].'Modelo/T_LU/',
-         $_SESSION['ROOT'].'Modelo/conector/',
-         $_SESSION['ROOT'].'Control/C_LU/',
+         $_SESSION['ROOT'].'Modelo/Conector/',
+         $_SESSION['ROOT'].'Control/C_LU/'
         //$_SESSION['ROOT'].'Modelo/',
         //$_SESSION['ROOT'].'Modelo/conector/',
         //$_SESSION['ROOT'].'Control/',

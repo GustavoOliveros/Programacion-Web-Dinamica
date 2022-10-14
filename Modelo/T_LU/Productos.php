@@ -10,17 +10,17 @@ class Productos extends BaseDatos2 {
 
     // Metodo constructor crea una nueva instancia de una clase.
     public function __construct(){
-
-        $this->id="";
+        parent::__construct();
+        $this->id=null;
         $this->nombre = "";
         $this->existencia ="";
         $this->codigoBarras = "";
-
         $this->mensajeoperacion ="";
     }
 
-    public function setear($nombre, $existencia, $codigoBarras){
+    public function setear($id, $nombre, $existencia, $codigoBarras){
 
+        $this->setId($id);
         $this->setNombre($nombre);
         $this->setExistencia($existencia);
         $this->setCodigoBarras($codigoBarras);
@@ -72,13 +72,12 @@ class Productos extends BaseDatos2 {
     // Metodo cargar nos va realizar una busqueda de un determinado producto por DNI del dueño.
     public function cargar(){
         $resp = false;
-        $base = new BaseDatos2();
         $query = "SELECT * FROM productos WHERE id = ".$this->getId();
-        if($base->Iniciar()){
-            $rta = $base->Ejecutar($query);
+        if($this->Iniciar()){
+            $rta = $this->Ejecutar($query);
             if($rta > -1){
                 if($rta > 0 ){
-                    $row = $base->Registro();
+                    $row = $this->Registro();
                     $this->setear($row['id'],
                                   $row['nombre'],
                                   $row['existencia'],
@@ -86,7 +85,7 @@ class Productos extends BaseDatos2 {
                 }
             }
         }else{
-            $this->setmensajeoperacion("Productos->listar: ".$base->getError());
+            $this->setmensajeoperacion("Productos->listar: ".$this->getError());
         }
         return $resp;
     }
@@ -110,16 +109,15 @@ class Productos extends BaseDatos2 {
     //ABM: Método que permite actualizar los datos
     public function modificar(){
         $resp = false;
-        $base = new BaseDatos2();
         $sql="UPDATE productos SET nombre ='".$this->getNombre()."', existencia = '".$this->getExistencia()."', codigoBarras ='".$this->getCodigoBarras()."'  WHERE id=".$this->getId();
-        if ($base->Iniciar()) {
-            if ($base->Ejecutar($sql)) {
+        if ($this->Iniciar()) {
+            if ($this->Ejecutar($sql)) {
                 $resp = true;
             } else {
-                $this->setmensajeoperacion("Productos->modificar: ".$base->getError());
+                $this->setmensajeoperacion("Productos->modificar: ".$this->getError());
             }
         } else {
-            $this->setmensajeoperacion("Productos->modificar: ".$base->getError());
+            $this->setmensajeoperacion("Productos->modificar: ".$this->getError());
         }
         return $resp;
     }
@@ -127,16 +125,15 @@ class Productos extends BaseDatos2 {
     //ABM: Método que permite eliminar el registro
     public function eliminar(){
         $resp = false;
-        $base = new BaseDatos2();
         $sql="DELETE FROM productos WHERE id=".$this->getId();
-        if ($base->Iniciar()) {
-            if ($base->Ejecutar($sql)) {//ejecutar en este punto retorna la cantidad de filas afectadas
+        if ($this->Iniciar()) {
+            if ($this->Ejecutar($sql)) {//ejecutar en este punto retorna la cantidad de filas afectadas
                 $resp = true;
             } else {
-                $this->setmensajeoperacion("Productos->eliminar: ".$base->getError());
+                $this->setmensajeoperacion("Productos->eliminar: ".$this->getError());
             }
         } else {
-            $this->setmensajeoperacion("Productos->eliminar: ".$base->getError());
+            $this->setmensajeoperacion("Productos->eliminar: ".$this->getError());
         }
         return $resp;
     }
@@ -144,17 +141,16 @@ class Productos extends BaseDatos2 {
     // Metodo listar nos muestra los producto en stock.
     public function listar($parametro=""){
         $arreglo = array();
-        $base = new BaseDatos2();
         $sql="SELECT * FROM productos ";
 
         if ($parametro!="") {
             $sql.=' WHERE '.$parametro;
         }
-        $res = $base->Ejecutar($sql);
+        $res = $this->Ejecutar($sql);
         if($res > -1){
             if($res > 0){
 
-                while ($row = $base->Registro()){
+                while ($row = $this->Registro()){
                     $obj= new Productos();
                     $obj->setear($row['id'],
                                  $row['nombre'],
@@ -166,10 +162,18 @@ class Productos extends BaseDatos2 {
             }
 
         } else {
-            $this->setmensajeoperacion("Productos->listar: ".$base->getError());
+            $this->setmensajeoperacion("Productos->listar: ".$this->getError());
         }
 
         return $arreglo;
+    }
+
+    public function __toString()
+    {
+        return "<br>ID: " . $this->getId() .
+        "<br>Nombre: " . $this->getNombre() .
+        "<br>Existencia: " . $this->getExistencia() .
+        "<br>codigoBarras: " . $this->getCodigoBarras();
     }
 
 }

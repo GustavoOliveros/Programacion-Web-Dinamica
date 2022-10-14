@@ -12,6 +12,8 @@ $PROYECTO ='Programacion-Web-Dinamica';
 //variable que almacena el directorio del proyecto
 $ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
 
+$ROOT = "/export/home/gustavo.oliveros/public_html_lamptec/Programacion-Web-Dinamica/";
+
 include_once($ROOT.'Util/funciones.php');
 
 // En el include_once tiene el $root. concatenado. Consultar

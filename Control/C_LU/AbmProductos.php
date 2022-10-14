@@ -17,7 +17,7 @@ class AbmProductos{
             $obj = new Productos();
            
             // Acá se llama a la función setear de la tabla auto.
-            $obj->setear($param['nombre'], $param['existencia'], $param['codigoBarras']);
+            $obj->setear(null,$param['nombre'], $param['existencia'], $param['codigoBarras']);
         }
         return $obj;
     }
@@ -62,7 +62,7 @@ class AbmProductos{
         $elObjtTabla = $this->cargarObjeto($param);
         if ($elObjtTabla!=null and $elObjtTabla->insertar()){
            // $resp = true;
-            $resp = array('resultado'=> true,'error'=>'');
+            $resp = array('resultado'=> true,'error'=>'', 'obj' => $elObjtTabla);
         }else {
            // $resp = false;
             $resp = array('resultado'=> false,'error'=> $elObjtTabla->getmensajeoperacion());
