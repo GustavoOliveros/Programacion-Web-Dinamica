@@ -16,9 +16,6 @@ include_once "../../../Util/funciones_tp_lu.php";
 $resp = false;
 $entrada = data_submitted();
 $objProducto = new AbmProductos();
-//$nomProd['nombre'] = $entrada['nombre'];
-$nomProd =  array('nombre' => $entrada['nombre']);
-$producto = $objProducto->buscar($nomProd);
 $respuesta = $objProducto->alta($entrada);
 ?>
 
@@ -32,7 +29,7 @@ $respuesta = $objProducto->alta($entrada);
                 echo '<a href="../index/index.php" class="btn btn-primary text-start"><< Volver</a>';
             } else {
                 echo mostrarError("Verificar los datos, no se pudo ingresar el articulo ".$respuesta['error']
-            . '.<br><a href="../libreria/index.php">Volver a intentar</a>');
+            . '.<br><a href="../index/index.php">Volver a intentar</a>');
             }
            
         ?>

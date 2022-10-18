@@ -31,8 +31,8 @@ DROP TABLE IF EXISTS `productos`;
 CREATE TABLE IF NOT EXISTS `productos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `existencia` int(50) NOT NULL,
-  `codigoBarras` int(150) NOT NULL,
+  `existencia` int(11) NOT NULL,
+  `codigoBarras` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `codigoBarras` (`codigoBarras`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;

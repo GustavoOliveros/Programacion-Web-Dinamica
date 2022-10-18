@@ -12,7 +12,6 @@ include_once "../../../configuracion.php";
 // Funciones tp4
 include_once "../../../Util/funciones_tp_lu.php";
 
-
 // Contacto con control
 $objControl = new AbmProductos();
 $resultado = $objControl->buscar(null);

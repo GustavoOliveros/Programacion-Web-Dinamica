@@ -22,7 +22,7 @@ function mostrarProductos($arregloProductos){
         $tabla .= '<tr>'.'<td>' . $objProducto->getId() . '</td>' .
                         '<td>' . $objProducto->getNombre() . '</td>' .
                         '<td>' . $objProducto->getExistencia() . '</td>' .
-                        '<td><a class="btn btn-primary" href="xxx.php?codBarras='. $objProducto->getCodigoBarras() . '">Ver...</a></td></tr>';
+                        '<td><a class="btn btn-primary" href="../codBarras/listarCodBarras.php?codigoBarras='. $objProducto->getCodigoBarras() . '">Ver...</a></td></tr>';
     }
 
     $tabla .= "</tbody></table></div>";

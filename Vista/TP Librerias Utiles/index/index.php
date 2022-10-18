@@ -19,8 +19,8 @@ include_once "../../../configuracion.php";
             <img src="../../img/codBarras.jpg" alt="Auto" class="rounded img-fluid shadow text-center mb-3">
         </div>
         <div class="col-12 text-center mb-3">
-            <a class="btn btn-primary col-5" href="../libreria/listar.php">Listar</a>
-            <a class="btn btn-primary col-5" href="../libreria/index.php">Añadir</a>
+            <a class="btn btn-primary col-5" href="../producto/listarProducto.php">Listar</a>
+            <a class="btn btn-primary col-5" href="../producto/nuevoProducto.php">Añadir</a>
         </div>
         <div class="col-12 text-center mb-3">
             <a class="btn btn-success col-10" href="tutorial.php">Tutorial</a>

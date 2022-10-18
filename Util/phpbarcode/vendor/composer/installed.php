@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'barcode-bakery/barcode-1d' => array(
+            'pretty_version' => '7.0.4',
+            'version' => '7.0.4.0',
+            'reference' => '7291b305190b64362bfff774eb9ae5145861ca07',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../barcode-bakery/barcode-1d',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'barcode-bakery/barcode-common' => array(
+            'pretty_version' => '7.0.3',
+            'version' => '7.0.3.0',
+            'reference' => 'eafc5b7ac802cc21dc6218d6bad5b4d2d0fbfab5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../barcode-bakery/barcode-common',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

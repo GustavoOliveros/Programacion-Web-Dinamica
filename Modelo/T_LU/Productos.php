@@ -92,18 +92,21 @@ class Productos extends BaseDatos2 {
 
     //ABM: Método que permite insertar el objeto
     public function insertar(){
-        $resp = false;
+        $resp = null;
+        $resultado = false;
         $sql="INSERT INTO productos(nombre,existencia,codigoBarras)  VALUES('".$this->getNombre()."','".$this->getExistencia()."','".$this->getCodigoBarras()."')";
         if ($this->Iniciar()) {
-            if ($this->Ejecutar($sql)) {
-                $resp = true;
-            } else {
+            $resp = $this->Ejecutar($sql);
+            if ($resp) {
+                $this->setId($resp);
+                $resultado = true;
+            }else{
                 $this->setmensajeoperacion("Productos->insertar: ".$this->getError());
             }
         } else {
             $this->setmensajeoperacion("Productos->insertar: ".$this->getError());
         }
-        return $resp;
+        return $resultado;
     }
 
     //ABM: Método que permite actualizar los datos
