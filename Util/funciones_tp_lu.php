@@ -13,7 +13,7 @@ function mostrarProductos($arregloProductos){
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Existencia</th>
-                            <th scope="col">Barcode</th>
+                            <th scope="col">Código de barras</th>
                         </tr>
                     </thead>
                     <tbody>';
@@ -22,7 +22,7 @@ function mostrarProductos($arregloProductos){
         $tabla .= '<tr>'.'<td>' . $objProducto->getId() . '</td>' .
                         '<td>' . $objProducto->getNombre() . '</td>' .
                         '<td>' . $objProducto->getExistencia() . '</td>' .
-                        '<td><a class="btn btn-primary" href="../codBarras/listarCodBarras.php?codigoBarras='. $objProducto->getCodigoBarras() . '">Ver...</a></td></tr>';
+                        '<td><a class="btn btn-primary" href="../producto/verProducto.php?codigoBarras='. $objProducto->getCodigoBarras() . '">Ver...</a></td></tr>';
     }
 
     $tabla .= "</tbody></table></div>";

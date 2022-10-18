@@ -20,6 +20,8 @@ if(isset($param["codigoBarras"]) && $param["codigoBarras"]<>null){
     $entrada = $param["codigoBarras"];
 }
 
+$arreglo = ["EAN13" => "[0,9]{12}"];
+
 ?>
 
 <!-- Listado -->
@@ -34,8 +36,8 @@ if(isset($param["codigoBarras"]) && $param["codigoBarras"]<>null){
                 <img src="codBarrasEAN13.php?codigoBarras=<?php echo $entrada ?>" alt="" class="img-fluid">
         </div>
         <div class="col-3 text-center">
-                <h4>Código de barras - 128</h4>
-                <img src="codBarras128.php?codigoBarras=<?php echo $entrada ?>" alt="" class="img-fluid">
+                <h4>Código de barras - UPC-E</h4>
+                <img src="codBarrasUPCE.php?codigoBarras=<?php echo $entrada ?>" alt="" class="img-fluid">
         </div>
     </div>
     <a href="../producto/listarProducto.php" class="btn btn-primary text-start"><< Volver</a>
