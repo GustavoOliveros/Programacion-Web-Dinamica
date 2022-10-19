@@ -20,7 +20,7 @@ $objControl = new AbmProductos();
 
 $resultado = array();
 if(isset($param["codigoBarras"]) && $param["codigoBarras"]!=null){
-    $resultado = $objControl->buscar("codigoBarras = '" . $param["codigoBarras"] ."'");
+    $resultado = $objControl->buscar($param);
 }
 ?>
 
@@ -31,14 +31,14 @@ if(isset($param["codigoBarras"]) && $param["codigoBarras"]!=null){
         if(count($resultado)>0){
             echo '
             <h1 class="text-center">INFORMACIÓN DEL PRODUCTO</h1>
-            <div class="row col-12 border rounded shadow my-5">
-            <div class="col-6 d-flex align-items-center justify-content-center flex-column bg-secondary rounded-start">
+            <div class="row col-12 border rounded shadow mx-auto my-3">
+            <div class="col-6 d-flex align-items-center justify-content-center flex-column bg-secondary rounded">
                 <h2 class="text-light"><strong>'. $resultado[0]->getNombre() .'</strong></h2>
                 <h3 class="text-light fw-light">Existencia: <span class="fw-semibold">'. $resultado[0]->getExistencia() .'</span></h3>
             </div>
             <div class="col-6 d-flex align-items-center justify-content-center flex-column rounded">
-                <img src="../codBarras/codBarras128.php?codigoBarras='. $resultado[0]->getCodigoBarras() .'" alt="" class="img-fluid my-3">
-                <p class="text-center">Código de barras: '. $resultado[0]->getCodigoBarras() .'<br>Tipo: 128</p>
+                <img src="../codBarras/codBarras.php?codigoBarras='. $resultado[0]->getCodigoBarras() .'" alt="Codigo de barras" class="img-fluid my-3">
+                <p class="text-center">Código de barras: '. substr($resultado[0]->getCodigoBarras(),5) .'<br>Tipo: '. substr($resultado[0]->getCodigoBarras(),0,4) .'</p>
             </div>
             </div>';
         }else{
@@ -46,7 +46,7 @@ if(isset($param["codigoBarras"]) && $param["codigoBarras"]!=null){
         }
 
         ?>
-        <a class="btn btn-primary my-3" href="../index/index.php"><< Volver</a>
+        <a class="btn btn-primary my-3" href="listarProducto.php"><< Volver</a>
     </div>
 </main>
 

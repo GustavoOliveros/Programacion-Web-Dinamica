@@ -42,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `existencia`, `codigoBarras`) VALUES
-(1, 'Azucar', 23, 123456789),
-(2, 'Sal', 32, 124567823),
-(3, 'Yerba', 123, 321456789);
+(1, 'Azucar', 23, 'C128-123456789'),
+(2, 'Sal', 32, 'C128-34253455'),
+(3, 'Yerba', 123, 'C128-4354');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
