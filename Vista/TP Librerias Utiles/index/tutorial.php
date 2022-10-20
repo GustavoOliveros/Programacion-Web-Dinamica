@@ -16,12 +16,31 @@ include_once "../../../configuracion.php";
    <div class="col-12 col-lg-6">
     <h1 class="text-center">BARCODE BAKERY</h1>
     <p class="alert alert-secondary"><strong>Barcode Bakery</strong> es una librería de pago para la generación de códigos de barras. Cuentan con
-      una prueba gratis en su paquete de 1D, el cual puede 
+      una prueba gratis en su paquete de 1D.<br>
+      <a href="https://www.barcodebakery.com/en/download" target="_blank">Descargar (Versión para PHP)</a>
     </p>
-    <h2 class="text-start">TEST TEST TEST</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis necessitatibus soluta illo iure cum obcaecati voluptatibus illum doloribus tempora distinctio dolore accusamus molestias expedita repudiandae cumque numquam ea magnam quibusdam voluptatum, eum enim. Quaerat iure, dolorem repellat autem beatae debitis totam vitae illo deleniti, itaque quos doloremque! Ut, temporibus quaerat eius dolor numquam vero a. Debitis commodi repellat quis quia recusandae eligendi repellendus nemo facilis ratione reiciendis iusto esse aliquid odit dignissimos ut perferendis explicabo aspernatur eos, illum ea autem minus adipisci maxime. Iure eaque neque exercitationem suscipit magnam, porro minus unde, fuga placeat enim necessitatibus eos tenetur. Quaerat, aperiam!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis necessitatibus soluta illo iure cum obcaecati voluptatibus illum doloribus tempora distinctio dolore accusamus molestias expedita repudiandae cumque numquam ea magnam quibusdam voluptatum, eum enim. Quaerat iure, dolorem repellat autem beatae debitis totam vitae illo deleniti, itaque quos doloremque! Ut, temporibus quaerat eius dolor numquam vero a. Debitis commodi repellat quis quia recusandae eligendi repellendus nemo facilis ratione reiciendis iusto esse aliquid odit dignissimos ut perferendis explicabo aspernatur eos, illum ea autem minus adipisci maxime. Iure eaque neque exercitationem suscipit magnam, porro minus unde, fuga placeat enim necessitatibus eos tenetur. Quaerat, aperiam!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis necessitatibus soluta illo iure cum obcaecati voluptatibus illum doloribus tempora distinctio dolore accusamus molestias expedita repudiandae cumque numquam ea magnam quibusdam voluptatum, eum enim. Quaerat iure, dolorem repellat autem beatae debitis totam vitae illo deleniti, itaque quos doloremque! Ut, temporibus quaerat eius dolor numquam vero a. Debitis commodi repellat quis quia recusandae eligendi repellendus nemo facilis ratione reiciendis iusto esse aliquid odit dignissimos ut perferendis explicabo aspernatur eos, illum ea autem minus adipisci maxime. Iure eaque neque exercitationem suscipit magnam, porro minus unde, fuga placeat enim necessitatibus eos tenetur. Quaerat, aperiam!</p>
+    <h2 class="text-start">REQUISITOS</h2>
+    <ul>
+      <li>PHP 7.4 o superior</li>
+      <li>Extensión GD</li>
+    </ul>
+    <h2 class="text-start">INSTALACION</h2>
+    <p>Primero que nada, se deberá chequear que tengamos la versión de PHP adecuada y la extensión GD instalada.
+    Para ello deberemos acceder al phpinfo.</p>
+    <p>La versión está señalada en la parte de arriba y si el GD está instalado, se podrá observar un módulo con su nombre.</p>
+    <p>De no estar instalado, deberá pegar la siguiente línea al final de su php.ini:</p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension=gd</code><br>
+    <p>A continuación, descargue el archivo comprimido de la página de bakery barcode y extraiga su contenido.
+      Dentro habrán dos carpetas "example" y "package":
+    </p>
+    <ul>
+      <li>"Example" contiene una demo que permite generar todos los códigos incluidos en la líbreria.</li>
+      <li>"Package" contiene todas las clases necesarias de la líbreria.</li>
+    </ul>
+    <p>Una vez culminado esto, ya estará instalada.</p>
+    <h2 class="text-start">USO</h2>
+    En la <a href="https://www.barcodebakery.com/en/docs/php/barcode/1d" target="_blank">página web de la líbreria</a>, podemos acceder al código de cada tipo de código de barra.
+    Alternativamente, puede ir al index.php ubicado en example, el cual contiene un generador.
    </div>
 </main>
 
