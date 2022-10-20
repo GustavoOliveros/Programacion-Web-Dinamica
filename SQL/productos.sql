@@ -42,9 +42,18 @@ CREATE TABLE IF NOT EXISTS `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `existencia`, `codigoBarras`) VALUES
-(1, 'Azucar', 23, 'C128-123456789'),
-(2, 'Sal', 32, 'C128-34253455'),
-(3, 'Yerba', 123, 'C128-4354');
+(1, 'Azucar', 20, '7435A3454'),
+(2, 'Sal', 32, '3243123453234'),
+(3, 'Yerba', 120, '43234324'),
+(4, 'Harina', 23, 'A42434D'),
+(5, 'Leche', 32, '432-12'),
+(6, 'Huevos', 36, 'ABC1424/ 24'),
+(7, 'Polenta', 20, 'ASDFV1234'),
+(8, 'Libro de cocina', 30, '2343543243'),
+(9, 'Libro de cocina profesional', 50, '234354323443'),
+(10, 'Tomate', 20, '234354'),
+(11, 'Lechuga', 50, '03432435334'),
+(12, 'Tomate', 20, '434534');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
