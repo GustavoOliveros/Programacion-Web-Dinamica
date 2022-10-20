@@ -40,7 +40,7 @@ include_once "../../../configuracion.php";
     <p>Una vez culminado esto, ya estará instalada.</p>
     <h2 class="text-start">USO</h2>
     En la <a href="https://www.barcodebakery.com/en/docs/php/barcode/1d" target="_blank">página web de la líbreria</a>, podemos acceder al código de cada tipo de código de barra.
-    Alternativamente, puede ir al index.php ubicado en example, el cual contiene un generador.
+    Alternativamente, puede ir al <a href="../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/index.php">index.php</a> ubicado en example, el cual contiene un generador.
    </div>
 </main>
 
