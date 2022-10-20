@@ -13,7 +13,7 @@ function mostrarProductos($arregloProductos){
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Existencia</th>
-                            <th scope="col">Código de barras</th>
+                            <th scope="col">Código</th>
                         </tr>
                     </thead>
                     <tbody>';

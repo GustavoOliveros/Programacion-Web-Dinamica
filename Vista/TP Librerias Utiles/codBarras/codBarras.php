@@ -23,9 +23,11 @@ use BarcodeBakery\Barcode\BCGupca;
 use BarcodeBakery\Barcode\BCGupce;
 use BarcodeBakery\Barcode\BCGmsi;
 
+// Excepcioness
+use BarcodeBakery\Common\BCGParseException;
 
 // Autoload
-require '../../../Util/phpbarcode/vendor/autoload.php';
+require '../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/vendor/autoload.php';
 
 // Colores
 $colorBlack = new BCGColor(0, 0, 0);
@@ -71,16 +73,39 @@ switch(substr($param["codigoBarras"],0,4)){
         $code = new BCGcode128();
         break;
 }
-
-$font = new BCGFontFile('../../../Util/phpbarcode/font/arial.ttf', 18); // Fuente
+$font = new BCGFontFile('../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/font/Arial.ttf', 18); // Fuente
 $code->setScale(2); // Resolución
 $code->setThickness(30); // Grosor
 $code->setForegroundColor($colorBlack); // Color de las barras
 $code->setBackgroundColor($colorWhite); // Color de los espacios
 $code->setFont($font); // Fuente (o 0)
-$code->parse(substr($param["codigoBarras"],5)); // Texto a convertir - En este caso, caracteres despues del guion
-$drawing = new BCGDrawing($code, $colorWhite); // Codigo y color de fondo = Codigo de Barras
 
-header('Content-Type: image/png'); // Header de tipo imagen
-$drawing->finish(BCGDrawing::IMG_FORMAT_PNG); // Fin de la creación de la imagen
+try{
+    $code->parse(substr($param["codigoBarras"],5)); // Texto a convertir - En este caso, caracteres despues del guion
+  
+    $drawing = new BCGDrawing($code, $colorWhite); // Codigo y color de fondo = Codigo de Barras
+
+    header('Content-Type: image/png'); // Header de tipo imagen
+
+    $drawing->finish(BCGDrawing::IMG_FORMAT_PNG); // Fin de la creación de la imagen
+}catch(BCGParseException $ex){
+    $titulo = "TP - Librerías Útiles";
+    include_once "../../Estructura/encabezado.php";
+    
+    // Navbar
+    include_once "../../Estructura/navbar.php";
+    
+    // Configuración
+    include_once "../../../configuracion.php";
+
+    echo mostrarError('ERROR: El código del producto no puede ser convertido a este tipo de código de barra.<br><strong>Motivo:</strong>
+    <div class="alert alert-secondary">'. $ex->getMessage() .'</div>
+    
+    
+    <br>
+    <a href="../producto/verProducto.php?codigoBarras='. substr($param["codigoBarras"],5) .'"><< Seleccionar otro</a>');
+
+    include_once "../../Estructura/footer.php";
+}
+
 ?>

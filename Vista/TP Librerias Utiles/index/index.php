@@ -20,10 +20,11 @@ include_once "../../../configuracion.php";
         </div>
         <div class="col-12 text-center mb-3">
             <a class="btn btn-primary col-5" href="../producto/listarProducto.php">Listar</a>
-            <a class="btn btn-primary col-5" href="../producto/nuevoProducto.php">Añadir</a>
+            <a class="btn btn-primary col-5" href="../producto/buscarProducto.php">Buscar</a>
         </div>
         <div class="col-12 text-center mb-3">
-            <a class="btn btn-success col-10" href="tutorial.php">Tutorial</a>
+            <a class="btn btn-success col-5" href="tutorial.php">Tutorial</a>
+            <a class="btn btn-success col-5" href="../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/index.php">Demo</a>
         </div>
     </div>
 </main>
