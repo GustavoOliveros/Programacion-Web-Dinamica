@@ -57,7 +57,7 @@ La demo provee una interfaz gráfica que permite generar todo tipo de código de
 Solo debe ejecutar el `index.php` que se encuentra en la carpeta "example".
 
 ## Generación de códigos
-Debera crear un script llamado `test.php` en su proyecto.
+Debera crear un script. En nuestro ejemplo, lo llamaremos `test.php`.
 
 ### Paso 1
 Lo primero que debe incluir en su código es el `autoload.php`. Use el que viene en el directorio "vendor" ubicado dentro de "example".
