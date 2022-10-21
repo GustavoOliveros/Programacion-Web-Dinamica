@@ -23,7 +23,8 @@ include_once "../../../configuracion.php";
             <a class="btn btn-primary col-5" href="../producto/buscarProducto.php">Buscar</a>
         </div>
         <div class="col-12 text-center mb-3">
-            <a class="btn btn-success col-10" href="../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/index.php">Demo</a>
+            <a class="btn btn-success col-5" href="https://github.com/GustavoOliveros/Programacion-Web-Dinamica/blob/master/Vista/TP%20Librerias%20Utiles/readme.md" target="_blank">Tutorial</a>
+            <a class="btn btn-success col-5" href="../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/index.php" target="_blank">Demo</a>
         </div>
     </div>
 </main>
