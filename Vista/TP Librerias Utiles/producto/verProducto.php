@@ -33,9 +33,14 @@ if (isset($param["codigoBarras"]) && $param["codigoBarras"] != null) {
             <h1 class="text-center">INFORMACIÓN DEL PRODUCTO</h1>
         <div class="row col-12 d-flex align-items-center justify-content-center">
             <div class="col-12 d-flex align-items-center justify-content-center flex-column p-4">
-                <h2>'. $resultado[0]->getNombre() .'</h2>
+                <h2 id="nombre">'. $resultado[0]->getNombre() .'</h2>
                 <h3 class="fw-light">Existencia: <span class="fw-semibold">'.$resultado[0]->getExistencia().'</span></h3>
-                <h3 class="fw-light">Código: <span class="fw-semibold">'.$resultado[0]->getCodigoBarras().'</span></h3>
+                <h3 class="fw-light">Código: <span class="fw-semibold" id="codigo">'.$resultado[0]->getCodigoBarras().'</span></h3>
+            </div>
+            <hr>
+            <div class="form-check mb-3 d-flex align-items-center justify-content-center">
+                <input type="checkbox" name="boton-label" id="boton-label" class="form-check-input">
+                <label for="boton-label" class="form-check-label">¿Desea agregar una etiqueta con el nombre del producto al código?</label>
             </div>
             <hr>
         </div>
@@ -173,6 +178,7 @@ if (isset($param["codigoBarras"]) && $param["codigoBarras"] != null) {
             << Volver</a>
     </div>
 </main>
+<script src="../../js/verproducto.js"></script>
 
 <?php
 // Footer

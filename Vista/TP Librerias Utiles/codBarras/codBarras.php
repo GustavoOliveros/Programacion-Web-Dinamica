@@ -79,7 +79,7 @@ switch(substr($param["codigoBarras"],0,4)){
 }
     $font = new BCGFontFile('../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/font/Arial.ttf', 54); // Fuente
 if(isset($param["nombre"])){
-    $label = new BCGLabel($param["nombre"],$font,BCGLabel::POSITION_LEFT, BCGLabel::ALIGN_CENTER);
+    $label = new BCGLabel($param["nombre"],$font, BCGLabel::POSITION_TOP, BCGLabel::ALIGN_CENTER);
 }
 
 $drawException = null;

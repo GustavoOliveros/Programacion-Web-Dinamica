@@ -6,7 +6,7 @@ header ("Cache-Control: no-cache, must-revalidate ");
 /////////////////////////////
 // CONFIGURACION APP//
 /////////////////////////////
-$PROYECTO ='Programacion-Web-Dinamica';
+$PROYECTO ='PWD/PWD_GRUPO/Programacion-Web-Dinamica';
 
 //variable que almacena el directorio del proyecto
 $ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
