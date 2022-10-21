@@ -7,8 +7,10 @@ $param = data_submitted();
 
 // Clases comunes
 use BarcodeBakery\Common\BCGColor;
-use BarcodeBakery\Common\BCGDrawing;
 use BarcodeBakery\Common\BCGFontFile;
+use BarcodeBakery\Common\BCGLabel;
+use BarcodeBakery\Common\BCGDrawing;
+
 
 // Codigos de barras
 use BarcodeBakery\Barcode\BCGcode128;
@@ -23,9 +25,6 @@ use BarcodeBakery\Barcode\BCGupca;
 use BarcodeBakery\Barcode\BCGupce;
 use BarcodeBakery\Barcode\BCGmsi;
 
-// Excepcioness
-use BarcodeBakery\Common\BCGParseException;
-
 // Autoload
 require '../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/vendor/autoload.php';
 
@@ -35,6 +34,11 @@ $colorWhite = new BCGColor(255, 255, 255);
 
 // Tipo de codigo de barras
 // En el dominio está representado por los primeros cuatro caracteres antes del guión
+if(!isset($param["codigoBarras"]) || $param["codigoBarras"] == ""){
+    $param["codigoBarras"] = "C128-000000000";
+    $param["nombre"] = "INVALIDO";
+}
+
 switch(substr($param["codigoBarras"],0,4)){
     case "EA13":
         $code = new BCGean13();
@@ -73,39 +77,65 @@ switch(substr($param["codigoBarras"],0,4)){
         $code = new BCGcode128();
         break;
 }
-$font = new BCGFontFile('../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/font/Arial.ttf', 18); // Fuente
-$code->setScale(2); // Resolución
-$code->setThickness(30); // Grosor
-$code->setForegroundColor($colorBlack); // Color de las barras
-$code->setBackgroundColor($colorWhite); // Color de los espacios
-$code->setFont($font); // Fuente (o 0)
+    $font = new BCGFontFile('../../../Util/phpbarcode/barcodegen.1d-php.v7.0.4/example/font/Arial.ttf', 54); // Fuente
+if(isset($param["nombre"])){
+    $label = new BCGLabel($param["nombre"],$font,BCGLabel::POSITION_LEFT, BCGLabel::ALIGN_CENTER);
+}
 
-try{
-    $code->parse(substr($param["codigoBarras"],5)); // Texto a convertir - En este caso, caracteres despues del guion
-  
-    $drawing = new BCGDrawing($code, $colorWhite); // Codigo y color de fondo = Codigo de Barras
+$drawException = null;
+$barcode = null;
+try {
+    $code->setScale(6); // Resolución
+    $code->setThickness(30); // Altura
+    $code->setForegroundColor($colorBlack); // Color de las barras
+    $code->setBackgroundColor($colorWhite); // Color de los espacios
+    $code->setFont($font); // Fuentes (o 0)
+    $code->parse(substr($param["codigoBarras"], 5)); // Texto
+    if(isset($param["nombre"])){
+        $code->addLabel($label); // Etiqueta
+    }
 
-    header('Content-Type: image/png'); // Header de tipo imagen
 
-    $drawing->finish(BCGDrawing::IMG_FORMAT_PNG); // Fin de la creación de la imagen
-}catch(BCGParseException $ex){
+    $barcode = $code;
+
+    // Header
+    header('Content-Type: image/png');
+    header('Content-Disposition: inline; filename="barcode.png"');
+
+    // Version 7
+    $drawing = new BCGDrawing($barcode, $colorWhite);
+
+    // Versión 6:
+    // $drawing = new BCGDrawing('', $colorWhite);
+    // $drawing->setBarcode($barcode);
+    // $drawing->draw();
+
+    // Renderiza el código de barra como png
+    $drawing->finish(BCGDrawing::IMG_FORMAT_PNG);
+} catch (Exception $exception) {    
+    // Encabezado
     $titulo = "TP - Librerías Útiles";
     include_once "../../Estructura/encabezado.php";
-    
+
     // Navbar
     include_once "../../Estructura/navbar.php";
-    
+
     // Configuración
     include_once "../../../configuracion.php";
 
-    echo mostrarError('ERROR: El código del producto no puede ser convertido a este tipo de código de barra.<br><strong>Motivo:</strong>
-    <div class="alert alert-secondary">'. $ex->getMessage() .'</div>
-    
-    
-    <br>
-    <a href="../producto/verProducto.php?codigoBarras='. substr($param["codigoBarras"],5) .'"><< Seleccionar otro</a>');
 
+    $enlace = '<a href="../producto/verProducto.php?codigoBarras='. substr($param["codigoBarras"],5) . '"><< Seleccionar otro tipo</a>';
+
+    echo mostrarError('El código no pudo ser convertido a este tipo.<br><strong>Motivo:</strong>
+    <div class="alert alert-secondary">'. $exception->getMessage() .'</div>'. $enlace
+    );
+
+    // Footer
     include_once "../../Estructura/footer.php";
 }
+
+
+
+
 
 ?>

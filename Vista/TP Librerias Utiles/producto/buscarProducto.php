@@ -16,7 +16,7 @@ $entrada = data_submitted();
 <!-- Formulario -->
 <main class="container-fluid d-flex align-items-center justify-content-center flex-column">
     <div class="col-12 col-md-6">
-        <form action="../producto/verProducto.php" method="post" class="needs-validation" id="form" name="form" novalidate>
+        <form action="../producto/verProducto.php" method="get" class="needs-validation" id="form" name="form" novalidate>
             <h1 class="text-center">Buscar Producto</h1>
             <div class="row">
                 <div class="col-12 col-lg-6 mx-auto position-relative">
