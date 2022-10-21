@@ -67,7 +67,7 @@ Lo primero que debe incluir en su código es el `autoload.php`. Use el que viene
 > "path" debe ser reemplazado por la ruta absoluta o relativa a la carpeta example.
 
 ### Paso 2
-Ahora tendrá que agregar las clases comunes, las cuales son las siguientes:
+Ahora tendrá que indicar las clases comunes que va a usar, las cuales son las siguientes:
 
 ##### BCGColor
 Determina los colores empleados. Su constructor recibe tres números enteros entre 0 y 255 que representan al RGB (rojo, verde y azul).
@@ -162,9 +162,9 @@ $drawing = new BCGDrawing($code, $colorWhite);
 $drawing->finish(BCGDrawing::IMG_FORMAT_PNG, 'codigo.png');
 ```
 
-El método "finish" de la clase BCGDrawing recibe el formato (PNG O JPG) y el nombre que tendrá el resultado.
+El método "finish" de la clase BCGDrawing recibe el formato (PNG O JPG) y el nombre que tendrá el resultado. Posteriormente, "finaliza" la generación.
 
-Una vez ejecutado, se guardará en el directorio donde se encuentra el `test.php` creado.
+Una vez ejecutado, el resultado guardará en el directorio donde se encuentra el `test.php` creado.
 
 #### Mostrar
 Si se pretende mostrar, entonces previo a ejecutar "finish", deberemos que el header es de tipo imagen:
