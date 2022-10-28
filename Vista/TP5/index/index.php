@@ -1,0 +1,4 @@
+<?php
+echo md5("1JJN3KJN5J2KSJJN1JRJTK5K6KCJJN");
+
+?>

@@ -116,13 +116,28 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="TPLU">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFour">
-                        PHP Trabajo Práctico Librerias Útiles
+                        Trabajo Práctico Librerias Útiles
                     </button> 
                 </h2>
                 <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <div class="accordion accordion-flush">
                             <div class="accordion-item p-3"><a href="../../TP Librerias Utiles/index/index.php">Librerias Codigo de Barra</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="TP5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        Trabajo Práctico #5
+                    </button> 
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="accordion accordion-flush">
+                            <div class="accordion-item p-3"><a href="../../TP5/index/index.php">LOGIN</a>
                             </div>
                         </div>
                     </div>
