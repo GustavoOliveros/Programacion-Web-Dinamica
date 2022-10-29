@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
 DROP TABLE IF EXISTS `usuariorol`;
 CREATE TABLE IF NOT EXISTS `usuariorol` (
   `idusuario` bigint(20) NOT NULL,
-  `idrol` varchar(50) NOT NULL,
+  `idrol` bigint(20) NOT NULL,
   PRIMARY KEY (`idusuario`,`idrol`),
   FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON UPDATE CASCADE ON DELETE RESTRICT,
   FOREIGN KEY (`idrol`) REFERENCES `rol` (`idrol`) ON UPDATE CASCADE ON DELETE RESTRICT
