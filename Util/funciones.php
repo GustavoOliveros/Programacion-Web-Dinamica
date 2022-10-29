@@ -43,11 +43,9 @@ spl_autoload_register(function($class_name){
     $directorys = array(
          $_SESSION['ROOT'].'Modelo/T_LU/',
          $_SESSION['ROOT'].'Modelo/Conector/',
-         $_SESSION['ROOT'].'Control/C_LU/'
-        //$_SESSION['ROOT'].'Modelo/',
-        //$_SESSION['ROOT'].'Modelo/conector/',
-        //$_SESSION['ROOT'].'Control/',
-      //  $GLOBALS['ROOT'].'util/class/',
+         $_SESSION['ROOT'].'Control/C_LU/',
+         $_SESSION['ROOT'].'Modelo/TP5/',
+         $_SESSION['ROOT'].'Control/TP5/'
     );
     //print_object($directorys) ;
     foreach($directorys as $directory){

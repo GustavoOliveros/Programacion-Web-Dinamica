@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `usnombre` varchar(50) NOT NULL UNIQUE,
   `uspass` varchar(40) NOT NULL,
   `usmail` varchar(50) NOT NULL,
-  `usdeshabilitado` TIMESTAMP
+  `usdeshabilitado` TIMESTAMP DEFAULT '0000-00-00'
 ) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --

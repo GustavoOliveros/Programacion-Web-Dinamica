@@ -9,6 +9,7 @@ class BaseDatos2 extends PDO {
   	private $debug;
   	private $conec;
   	private $indice;
+    private $error;
   	private $resultado;
     
     public function __construct(){

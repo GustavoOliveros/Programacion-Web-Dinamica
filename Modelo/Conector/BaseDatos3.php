@@ -1,5 +1,5 @@
 <?php
-class BaseDatos extends PDO {
+class BaseDatos3 extends PDO {
   
     private $engine;
     private $host;
@@ -15,9 +15,9 @@ class BaseDatos extends PDO {
     public function __construct(){
         $this->engine = 'mysql';
         $this->host = 'localhost';
-        $this->database ='pwd_goliveros';
-        $this->user = 'pwd_goliveros';
-        $this->pass = 'pwd_goliveros';
+        $this->database ='bdautenticacion';
+        $this->user = 'root';
+        $this->pass = '';
         $this->debug = true;
         $this->error ="";
         $this->sql ="";
@@ -40,6 +40,7 @@ class BaseDatos extends PDO {
      * @return boolean
      */
     public function Iniciar(){
+        $this->__construct();
         return $this->getConec();
         
     }
@@ -70,7 +71,6 @@ class BaseDatos extends PDO {
     public function getError(){
         return "\n".$this->error;
     }
-    
     /**
      * Funcion que setea la variable instancia sql
      */
@@ -193,9 +193,9 @@ class BaseDatos extends PDO {
        $e = $this->errorInfo();
        $this->setError($e);
        if($this->getDebug()){
-           echo "<pre>";
-           print_r($e);
-           echo "</pre>";
+          // echo "<pre>";
+           //print_r($e);
+         //  echo "</pre>";
        }
    }
 
