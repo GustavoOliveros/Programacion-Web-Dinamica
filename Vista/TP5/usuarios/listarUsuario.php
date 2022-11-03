@@ -1,16 +1,26 @@
 <?php
+// Configuración
+include_once "../../../configuracion.php";
+
+// Funciones tp5
+include_once "../../../Util/funciones_tp5.php";
+
+// Sesion
+$session = new Session();
+if(!$session->activa()){
+    header("Location:../login/login.php?error=3");
+}
+$arreglo = $session->getRol();
+if(!in_array("admin",$arreglo)){
+    header("Location:../paginasegura/paginaSegura.php?error=1");
+}
+
 // Encabezado
 $titulo = "Lista de Usuarios - TP 5";
 include_once "../../Estructura/encabezado.php";
 
 // Navbar
 include_once "../../Estructura/navbar.php";
-
-// Configuración
-include_once "../../../configuracion.php";
-
-// Funciones tp5
-include_once "../../../Util/funciones_tp5.php";
 
 // Contacto con control
 $objControl = new AbmUsuario();
@@ -28,8 +38,11 @@ $param = data_submitted();
         <h1 class="text-center">Usuarios</h1>
         <?php
         if(isset($param["error"])){
-            echo mostrarError($objControl->error($param["error"]));
+            echo mostrarError(getError($param["error"]));
+        }elseif(isset($param["exito"])){
+            echo mostrarExito("La acción se concretó con éxito.");
         }
+
         if(count($resultado)>0){
             echo mostrarUsuarios($resultado);
         }else{
@@ -37,7 +50,7 @@ $param = data_submitted();
         }
 
         ?>
-        <a class="btn btn-primary" href="../index/index.php"><< Volver</a>
+        <a class="btn btn-primary" href="../paginasegura/paginaSegura.php"><< Volver</a>
     </div>
 </main>
 

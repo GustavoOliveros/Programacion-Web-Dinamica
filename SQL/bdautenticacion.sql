@@ -57,8 +57,8 @@ CREATE TABLE IF NOT EXISTS `usuariorol` (
 --
 
 INSERT INTO `usuario`(`usnombre`,`uspass`,`usmail`) VALUES
-('root', 'a4ea6876f894e9ecc990bcfeb7f93d64', 'root@email.com'),
-('usuario1', '22a79aa4674c806956338099a5752c4f', 'usuario1@email.com');
+('root', '85df15fe22809f41007697ac39cce710', 'root@email.com'), -- Clave2022
+('usuario1', '1ce6445156c135504695ec53278922bd', 'usuario1@email.com'); --  usuario2022
 
 --
 -- Volcado de datos para la tabla `rol`

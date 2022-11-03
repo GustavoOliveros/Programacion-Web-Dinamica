@@ -95,6 +95,7 @@ class AbmUsuario{
         $resp = false;
         if ($this->seteadosCamposClaves($param)){
             $elObjtTabla = $this->cargarObjeto($param);
+            $elObjtTabla->setId($param["id"]);
             if($elObjtTabla!=null and $elObjtTabla->modificar()){
                 $resp = true;
             }
@@ -132,10 +133,13 @@ class AbmUsuario{
      * @return string mensaje
      */
     public function error($codError){
-        $msg = null;
+        $msg = "";
         switch($codError){
             case "1":
                 $msg = "Hubo un error con el envío de datos. Por favor, intente nuevamente.";
+                break;
+            case "2":
+                $msg = "La modificación no puede efectuarse.";
                 break;
         }
 

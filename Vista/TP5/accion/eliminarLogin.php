@@ -31,7 +31,7 @@ if(is_null($resultado)){
 }
 
 $param["pass"] = "";
-$param["deshabilitado"] = "'0000-00-00'";
+$param["deshabilitado"] = "CURRENT_TIMESTAMP";
 
 // Todo llegó
 if($objControl->modificacion($param)){

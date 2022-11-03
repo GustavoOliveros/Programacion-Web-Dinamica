@@ -25,19 +25,25 @@ class Session{
      */
     public function validar(){
         $resp = false;
+        $error = "";
 
         $where = ["nombre" => $_SESSION["nombreUsuario"], "pass" => $_SESSION["psw"]];
         $abmUsuario = new AbmUsuario();
         $arreglo = $abmUsuario->buscar($where);
 
         if(!is_null($arreglo)){
-            if(is_null($arreglo[0]->getDeshabilitado())){
+            if($arreglo[0]->getDeshabilitado() == "0000-00-00 00:00:00"){
                 $_SESSION["idusuario"] = $arreglo[0]->getId();
                 $resp = true;
+            }else{
+                $error = "2"; // Usuario deshabilitado
             }
+        }else{
+            $error = "1"; // Contraseña o usuario invalido
         }
 
-        return $resp;
+        $resultado = ["respuesta" => $resp, "error" => $error];
+        return $resultado;
     }
 
     /**
@@ -71,16 +77,20 @@ class Session{
 
     /**
      * Devuelve los roles del usuario logeado
-     * @return Rol
+     * @return array
      */
     public function getRol(){
-        $arregloObjRoles = null;
+        $_SESSION["roles"] = array();
 
         $where = ["idusuario" => $_SESSION["idusuario"]];
         $abmUsuarioRol = new AbmUsuarioRol();
         $arregloObjRoles = $abmUsuarioRol->buscar($where);
 
-        return $arregloObjRoles;
+        foreach($arregloObjRoles as $rol){
+            array_push($_SESSION["roles"], $rol->getObjRol()->getRolDescripcion());
+        }
+
+        return $_SESSION["roles"];
     }
 
     /**

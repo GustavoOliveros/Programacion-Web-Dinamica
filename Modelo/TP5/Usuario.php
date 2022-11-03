@@ -167,7 +167,7 @@ class Usuario extends BaseDatos3{
         $seConcreto = false;
 
         $consulta = "UPDATE usuario SET usnombre = '" . $this->getNombre() . "',
-        ', usmail = '" . $this->getMail() . "' WHERE idusuario = '" . $this->getId(). "'";
+        usmail = '" . $this->getMail() . "', usdeshabilitado = ". $this->getDeshabilitado() ." WHERE idusuario = '" . $this->getId(). "'";
 
         if($this->Iniciar()){
             if($this->Ejecutar($consulta)){

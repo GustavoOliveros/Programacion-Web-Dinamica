@@ -20,16 +20,16 @@ function data_submitted() {
 
 function mostrarError($contenidoError){
     return '
-        <div class="col-12 col-md-7 alert alert-danger m-3 p-3 mx-auto">'.
+        <div class="col-12 col-md-7 alert alert-danger m-3 p-3 mx-auto alert-dismissible fade show" role="alert">'.
         $contenidoError .
-        '</div>';
+        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
 }
 
 function mostrarExito($contenidoExito){
     return '
-        <div class="col-12 col-md-7 alert alert-success m-3 p-3 mx-auto">'.
+        <div class="col-12 col-md-7 alert alert-success m-3 p-3 mx-auto alert-dismissible fade show" role="alert">'.
         $contenidoExito .
-        '</div>';
+        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
 }
 
 function verEstructura($e){
@@ -41,11 +41,11 @@ function verEstructura($e){
 spl_autoload_register(function($class_name){
     //echo "class ".$class_name ;
     $directorys = array(
-         $_SESSION['ROOT'].'Modelo/T_LU/',
-         $_SESSION['ROOT'].'Modelo/Conector/',
-         $_SESSION['ROOT'].'Control/C_LU/',
-         $_SESSION['ROOT'].'Modelo/TP5/',
-         $_SESSION['ROOT'].'Control/TP5/'
+         $GLOBALS['ROOT'].'Modelo/T_LU/',
+         $GLOBALS['ROOT'].'Modelo/Conector/',
+         $GLOBALS['ROOT'].'Control/C_LU/',
+         $GLOBALS['ROOT'].'Modelo/TP5/',
+         $GLOBALS['ROOT'].'Control/TP5/'
     );
     //print_object($directorys) ;
     foreach($directorys as $directory){

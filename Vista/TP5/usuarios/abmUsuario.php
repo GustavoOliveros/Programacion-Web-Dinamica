@@ -5,6 +5,16 @@ include_once "../../../configuracion.php";
 // Funciones tp5
 include_once "../../../Util/funciones_tp5.php";
 
+// Sesion
+$session = new Session();
+if(!$session->activa()){
+    header("Location:../login/login.php?error=3");
+}
+$arreglo = $session->getRol();
+if(!in_array("admin",$arreglo)){
+    header("Location:../paginasegura/paginaSegura.php?error=5");
+}
+
 // Datos
 $param = data_submitted();
 
@@ -12,7 +22,7 @@ $param = data_submitted();
 $objControl = new AbmUsuario();
 
 // Verificaciones
-if($param["accion"] != "borrar" && $param["accion"] != "editar" ){
+if($param["accion"] != "borrar" && $param["accion"] != "editar" && $param["accion"] != "activar"){
     header("Location:listarUsuario.php?error=1");
 }
 if(!isset($param["id"])){
@@ -39,27 +49,33 @@ include_once "../../Estructura/navbar.php";
         <form
         action="
         <?php
-        if($param["accion"] == "editar"){echo "../accion/actualizarLogin.php";}
+        if($param["accion"] == "editar" || $param["accion"] == "activar"){echo "../accion/actualizarLogin.php";}
         else{echo "../accion/eliminarLogin.php";}
         ?>"
         method="post"
         id="form"
         name="form"
         class="needs-validation"
+        novalidate
         >
             <div class="row col-12">
                 <div class="col-12 col-lg-6">
                     <label for="nombre" class="form-label">Nombre de Usuario</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $resultado[0]->getNombre() ?>">
+                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" value="<?php echo $resultado[0]->getNombre() ?>" required>
+                    <div class="invalid-feedback">Obligatorio</div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <label for="mail" class="form-label">Correo Electrónico</label>
-                    <input type="text" class="form-control" name="mail" id="mail" value="<?php echo $resultado[0]->getMail() ?>">
+                    <input type="email" class="form-control" name="mail" id="mail" maxlength="50" value="<?php echo $resultado[0]->getMail() ?>" required>
+                    <div class="invalid-feedback">Ingrese un correo electrónico válido</div>
                 </div>
                 <div class="col-12 col-lg-6">
+                    <a href="listarUsuario.php" class="btn btn-primary"><< Volver</a>
                     <input type="submit" class="btn btn-primary my-2" value="<?php echo ucfirst($param["accion"]); ?>">
                 </div>
             </div>
+
+            <input name="id" id="id" type="hidden" value="<?php echo $param["id"]; ?>" readonly required>
         </form>
     </div>
 </main>

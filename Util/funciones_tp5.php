@@ -18,7 +18,8 @@ function mostrarUsuarios($arregloUsuarios)
                 <tbody>';
 
     foreach ($arregloUsuarios as $objUsuario) {
-        $tabla .= '<tr>' .
+        if($objUsuario->getDeshabilitado() == "0000-00-00 00:00:00"){
+            $tabla .= '<tr>' .
             '<td>' . $objUsuario->getId() . '</td>' .
             '<td>' . $objUsuario->getNombre() . '</td>' .
             '<td>' . $objUsuario->getMail() . '</td>' .
@@ -26,6 +27,15 @@ function mostrarUsuarios($arregloUsuarios)
             <a href="abmUsuario.php?id='. $objUsuario->getId() .'&accion=editar" class="btn btn-primary">Editar</a>
             <a href="abmUsuario.php?id='. $objUsuario->getId() .'&accion=borrar" class="btn btn-danger">Borrar</a>
             </td></tr>';
+        }else{
+            $tabla .= '<tr>' .
+            '<td class="table-danger">' . $objUsuario->getId() . '</td>' .
+            '<td class="table-danger">' . $objUsuario->getNombre() . '</td>' .
+            '<td class="table-danger">' . $objUsuario->getMail() . '</td>' .
+            '<td class="table-danger">
+            <a href="abmUsuario.php?id='. $objUsuario->getId() .'&accion=activar" class="btn btn-primary">Activar</a>
+            </td></tr>';
+        }
     }
     $tabla .= "</tbody></table></div>";
 
@@ -33,5 +43,27 @@ function mostrarUsuarios($arregloUsuarios)
     return $tabla;
 }
 
+/**
+ * Retorna un mensaje de error
+ * @param int $codError
+ * @return string
+ */
+function getError($codError){
+    $arreglo = [
+        "Hubo un error el envío de datos. Por favor, inténtelo de nuevo.", // Error 0
+        "El usuario o contraseña son inválidos.", // Error 1
+        "El usuario está deshabilitado.", // Error 2
+        "Se cerró su sesión. Por favor, ingrese sus credenciales nuevamente.", // Error 3
+        "La acción no pudo concretarse. Por favor, inténtelo de nuevo." // Error 4
+    ];
+
+    if($codError >= count($arreglo) || $codError < 0){
+        $mensaje = "Ocurrió un error desconocido. Por favor, inténtelo de nuevo.";
+    }else{
+        $mensaje = $arreglo[$codError];
+    }
+
+    return $mensaje;
+}
 
 ?>
