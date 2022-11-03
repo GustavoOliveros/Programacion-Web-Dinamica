@@ -33,6 +33,7 @@ function validarContrasenia(submitEvent) {
         } else {
             password.classList.remove("is-invalid");
             password.classList.add("is-valid");
+            
         }
     }
 }
