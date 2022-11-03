@@ -8,7 +8,7 @@ include_once "../../../Util/funciones_tp5.php";
 // Sesion
 $session = new Session();
 if($session->activa()){
-    header("Location:../paginasegura/paginaSegura.php");
+    header("Location:../paginaSegura/paginaSegura.php");
 }
 
 // Encabezado

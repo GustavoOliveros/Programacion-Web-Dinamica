@@ -24,6 +24,12 @@ include_once "../../Estructura/navbar.php";
 
 <!-- Contenido -->
 <main class="col-12 my-3 d-flex align-items-center justify-content-center flex-column">
+    <?php
+    if(isset($param["error"])){
+        echo mostrarError(getError($param["error"]));
+    }
+    
+    ?>
     <div class="col-12 col-md-6 mb-5">
         <h1 class="text-center my-3">¡Bienvenido, <?php echo $_SESSION["nombreUsuario"];  ?>!</h1>
         <div class="row col-12">

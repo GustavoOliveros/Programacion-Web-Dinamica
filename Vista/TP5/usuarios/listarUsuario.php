@@ -12,7 +12,7 @@ if(!$session->activa()){
 }
 $arreglo = $session->getRol();
 if(!in_array("admin",$arreglo)){
-    header("Location:../paginasegura/paginaSegura.php?error=1");
+    header("Location:../paginaSegura/paginaSegura.php?error=4");
 }
 
 // Encabezado
@@ -50,7 +50,7 @@ $param = data_submitted();
         }
 
         ?>
-        <a class="btn btn-primary" href="../paginasegura/paginaSegura.php"><< Volver</a>
+        <a class="btn btn-primary" href="../paginaSegura/paginaSegura.php"><< Volver</a>
     </div>
 </main>
 

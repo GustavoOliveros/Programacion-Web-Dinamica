@@ -15,25 +15,17 @@ class Session{
      * @return 
      */
     public function iniciar($nombreUsuario, $psw){
-        $_SESSION["nombreUsuario"] = $nombreUsuario;
-        $_SESSION["psw"] = $psw;
-    }
-
-    /**
-     * Valida si la sesión actual tiene usuario y psw válidos. Devuelve true o false
-     * @return 
-     */
-    public function validar(){
         $resp = false;
         $error = "";
 
-        $where = ["nombre" => $_SESSION["nombreUsuario"], "pass" => $_SESSION["psw"]];
+        $where = ["nombre" => $nombreUsuario, "pass" => $psw];
         $abmUsuario = new AbmUsuario();
         $arreglo = $abmUsuario->buscar($where);
 
         if(!is_null($arreglo)){
             if($arreglo[0]->getDeshabilitado() == "0000-00-00 00:00:00"){
                 $_SESSION["idusuario"] = $arreglo[0]->getId();
+                $_SESSION["nombreUsuario"] = $nombreUsuario;
                 $resp = true;
             }else{
                 $error = "2"; // Usuario deshabilitado
@@ -47,12 +39,25 @@ class Session{
     }
 
     /**
+     * Valida si la sesión actual tiene usuario y psw válidos. Devuelve true o false
+     * @return 
+     */
+    public function validar(){
+        $resp = false;
+        if($this->activa()){
+            $resp = true;
+        }
+
+        return $resp;
+    }
+
+    /**
      * Devuelve true o false si la sesión está activa o no
      * @return boolean
      */
     public function activa(){
         $resp = false;
-        if(isset($_SESSION["nombreUsuario"])){
+        if(isset($_SESSION["nombreUsuario"]) && isset($_SESSION["idusuario"])){
             $resp = true;
         }
 

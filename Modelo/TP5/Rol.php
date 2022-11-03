@@ -94,7 +94,7 @@ class Rol extends BaseDatos3{
                 $arreglo = [];
                 while($fila = $this->Registro()){
                     $objRol = new Rol();
-                    $objRol->buscar($fila["idrol"]);
+                    $objRol->cargar($fila["idrol"],$fila["roldescripcion"]);
                     array_push($arreglo, $objRol);
                 }
             }else{$this->setMensajeOperacion("rol->listar: ".$this->getError());}

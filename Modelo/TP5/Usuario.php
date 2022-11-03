@@ -127,7 +127,13 @@ class Usuario extends BaseDatos3{
                 $arreglo = [];
                 while($fila = $this->Registro()){
                     $objUsuario = new Usuario();
-                    $objUsuario->buscar($fila["idusuario"]);
+                    $this->cargar(
+                        $fila["idusuario"],
+                        $fila["usnombre"],
+                        $fila["uspass"],
+                        $fila["usmail"],
+                        $fila["usdeshabilitado"]
+                    );
                     array_push($arreglo, $objUsuario);
                 }
             }else{$this->setMensajeOperacion("usuario->listar: ".$this->getError());}

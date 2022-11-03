@@ -15,9 +15,9 @@ class BaseDatos3 extends PDO {
     public function __construct(){
         $this->engine = 'mysql';
         $this->host = 'localhost';
-        $this->database ='bdautenticacion';
-        $this->user = 'root';
-        $this->pass = '';
+        $this->database ='pwd_goliveros';
+        $this->user = 'pwd_goliveros';
+        $this->pass = 'pwd_goliveros';
         $this->debug = true;
         $this->error ="";
         $this->sql ="";

@@ -54,7 +54,8 @@ function getError($codError){
         "El usuario o contraseña son inválidos.", // Error 1
         "El usuario está deshabilitado.", // Error 2
         "Se cerró su sesión. Por favor, ingrese sus credenciales nuevamente.", // Error 3
-        "La acción no pudo concretarse. Por favor, inténtelo de nuevo." // Error 4
+        "No tienes permisos para acceder a esa página.", // Error 4
+        "La acción no pudo concretarse. Por favor, inténtelo de nuevo." // Error 5
     ];
 
     if($codError >= count($arreglo) || $codError < 0){

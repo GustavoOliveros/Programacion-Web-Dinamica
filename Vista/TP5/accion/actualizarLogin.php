@@ -12,7 +12,7 @@ if(!$session->activa()){
 }
 $arreglo = $session->getRol();
 if(!in_array("admin",$arreglo)){
-    header("Location:../paginasegura/paginaSegura.php?error=1");
+    header("Location:../paginaSegura/paginaSegura.php?error=1");
 }
 
 // Datos

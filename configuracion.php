@@ -11,6 +11,8 @@ $PROYECTO ='PWD/PWD_GRUPO/Programacion-Web-Dinamica';
 //variable que almacena el directorio del proyecto
 $ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
 
+$ROOT = "/export/home/gustavo.oliveros/public_html_lamptec/Programacion-Web-Dinamica/";
+
 include_once($ROOT.'Util/funciones.php');
 
 // Variable que define la pagina de autenticacion del proyecto

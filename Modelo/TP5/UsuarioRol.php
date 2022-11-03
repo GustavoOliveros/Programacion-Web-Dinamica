@@ -66,11 +66,11 @@ class UsuarioRol extends BaseDatos3{
                 if($fila = $this->Registro()){
                     // Rol
                     $objRol = new Rol();
-                    $objRol->buscar($idRol);
+                    $objRol->buscar($fila["idrol"]);
 
                     // Usuario
                     $objUsuario = new Usuario();
-                    $objUsuario->buscar($idUsuario);
+                    $objUsuario->buscar($fila["idusuario"]);
                     
                     $this->cargar(
                         $objRol,
