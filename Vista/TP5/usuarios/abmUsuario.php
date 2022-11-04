@@ -7,12 +7,11 @@ include_once "../../../Util/funciones_tp5.php";
 
 // Sesion
 $session = new Session();
-if(!$session->activa()){
+if(!$session->validar()){
     header("Location:../login/login.php?error=3");
 }
-$arreglo = $session->getRol();
-if(!in_array("admin",$arreglo)){
-    header("Location:../paginaSegura/paginaSegura.php?error=5");
+if(!$session->tieneRol("admin")){
+    header("Location:../paginaSegura/paginaSegura.php?error=1");
 }
 
 // Datos

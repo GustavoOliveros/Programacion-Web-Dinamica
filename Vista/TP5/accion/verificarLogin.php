@@ -13,9 +13,7 @@ if(!isset($param["nombre"]) || !isset($param["pass"])){
 
 // Contacto con control
 $session = new Session();
-$session->iniciar($param["nombre"], md5($param["pass"]));
-$resultado = $session->validar();
-
+$resultado = $session->iniciar($param["nombre"], $param["pass"]);
 
 if($resultado["respuesta"]){
     header("Location:../paginaSegura/paginaSegura.php");

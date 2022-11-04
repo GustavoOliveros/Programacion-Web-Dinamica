@@ -7,10 +7,8 @@ include_once "../../../Util/funciones_tp5.php";
 
 // Sesión
 $session = new Session();
-if(!$session->activa()){
+if(!$session->validar()){
     header("Location:../login/login.php?error=3");
-}else{
-    $arreglo = $session->getRol();
 }
 
 // Encabezado
@@ -35,7 +33,7 @@ include_once "../../Estructura/navbar.php";
         <div class="row col-12">
             <div class="col-6 mx-auto"><a href="../accion/cerrarSesion.php" class="btn btn-primary col-12">Cerrar Sesión</a></div>
             <?php
-            if(in_array("admin",$arreglo)){
+            if($session->tieneRol("admin")){
                 echo '<div class="col-6"><a href="../usuarios/listarUsuario.php" class="btn btn-primary col-12">Administrar Usuarios</a></div>';
             }
             ?>

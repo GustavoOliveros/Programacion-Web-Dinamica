@@ -44,7 +44,7 @@ class Session{
      */
     public function validar(){
         $resp = false;
-        if($this->activa()){
+        if($this->activa()){ // Verificaciones de permisos
             $resp = true;
         }
 
@@ -77,6 +77,8 @@ class Session{
 
         $objResultado = $arreglo[0];
 
+        $objResultado->setPass(NULL);
+
         return $objResultado;
     }
 
@@ -96,6 +98,22 @@ class Session{
         }
 
         return $_SESSION["roles"];
+    }
+
+    /**
+     * Revisa si el usuario tiene en rol
+     * @param string $rol
+     * @return boolean
+     */
+    public function tieneRol($rol){
+        $resp = false;
+
+        $colecRoles = $this->getRol();
+        if(in_array(strtolower($rol), $colecRoles)){
+            $resp = true;
+        }
+
+        return $resp;
     }
 
     /**
